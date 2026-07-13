@@ -1,0 +1,6 @@
+name :Abebe ,  amount  : 100
+name : Kebede,  amount : 200
+name : Abeba, amount : 300
+name : Abebe, amount : 200
+name : Kebede,  amount : 200
+name : Kalkidan , amount : 4000
