@@ -1,0 +1,4 @@
+paracentamol : 5
+panadol : 115
+berantin : 15
+keratin : 30
