@@ -49,13 +49,13 @@ else:
             reverse_key_val[val] = [key]
 
     listed_keys = list(reverse_key_val.keys())
-    print(listed_keys)
     listed_keys.sort()
 
     # loop according to the values and print the report accordingly
     for total_spent in listed_keys:
         for i in reverse_key_val[total_spent]:
-            print(i, '->' , total_spent)
+            with open('./day03/report.txt' , 'a') as report_file:
+                report_file.write(f"{i} -> {total_spent}\n")
 
     
 finally:

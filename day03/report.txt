@@ -1,0 +1,4 @@
+Abebe -> 300
+Abeba -> 300
+Kebede -> 400
+Kalkidan -> 4000
