@@ -23,9 +23,9 @@ class Account:
         
         self.__balance += amount
 
-    def withdrawal(self , amount):
+    def withdraw(self , amount):
         if amount <= 0:
-            print("Withdrawal amount can't be less than or equal to 0")
+            print("Withdraw amount can't be less than or equal to 0")
             return
         
         self.__balance -= amount
@@ -51,3 +51,35 @@ class SavingsAccount(Account):
         # self.__balance = old_balance + (old_balance * self.rate) 
         self.__balance += (self.__balance * self.rate)
         return self.__balance
+    
+    def statement(self):
+        print(f"{self.owner} - {self.number} - {self.get_balance()} , SavingsAccount")
+    
+
+
+class CurrentAccount(Account):
+    def __init__(self, owner, number, balance=0):
+        super().__init__(owner, number, balance)
+
+    def withdraw(self, amount):
+        # 
+        return super().withdrawal(amount)
+    
+
+    def statement(self):
+        print(f"{self.owner} - {self.number} - {self.get_balance()} , CheckingsAccount")
+
+
+
+my_acc = Account('Elizabeth' , '45667' , 990)
+my_current_acc = CurrentAccount('Elizabeth1' , '456367' , 990)
+my_saving_acc = SavingsAccount('Elizabeth2' , '456647' , 950)
+
+
+accounts = [ my_acc ,my_current_acc , my_saving_acc ]
+
+
+for x in accounts:
+    x.statement()
+
+    
