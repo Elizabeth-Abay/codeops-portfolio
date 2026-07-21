@@ -1,0 +1,1 @@
+in string comparison u compare the ASCII values of the char in strings
