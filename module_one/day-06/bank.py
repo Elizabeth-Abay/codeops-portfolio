@@ -1,5 +1,7 @@
 from abc import ABC , abstractmethod
 
+
+# having a separate alert service
 class AlertService(ABC):
     @abstractmethod
     def update(event):
@@ -7,9 +9,30 @@ class AlertService(ABC):
 
 class SMSAlert(AlertService):
     def update(event):
-        print(f"Something new happened - text {event}")
+        print(f"Something new happened , SMS alert - text {event}")
 
 
+class AuditLog(AlertService):
+    def update(event):
+        print(f"Something new happened , Audit logger - text {event}")
+
+
+
+
+# bank singelton
+class BankConfig:
+    def __new__(cls):
+        if cls.instance is None:
+            cls.instance = super().__new__(cls)
+            cls.instance.interest_rate = 0.15
+            cls.instance.overdraft_limit = -100
+        
+        return cls.instance
+
+
+bank_config = BankConfig()
+
+# keeping account focused on the balance maintainence
 class Account:
     def __init__(self , owner , number , balance = 0):
         self.owner = owner
@@ -39,8 +62,8 @@ class Account:
         # u can call methods in here
         print(f"{self.owner} - {self.number} - {self.get_balance()}")
 
-    def subscribe(subscriber : AlertService):
-        pass
+    def subscribe(self , subscriber : AlertService):
+        self.observer.append[subscriber]
 
     def _notify(self):
         for observer in self.observer:
@@ -50,7 +73,7 @@ class Account:
 
 
 class SavingsAccount(Account):
-    def __init__(self, owner, number,  interest = 0 ,balance=0 ):
+    def __init__(self, owner, number,  interest = bank_config.interest_rate ,balance=0 ):
         super().__init__(owner, number, balance)
         self.interest = interest
 
@@ -71,7 +94,7 @@ class SavingsAccount(Account):
 
 class CurrentAccount(Account):
     # the maximum limit for the overdraft is 100
-    def __init__(self, owner, number, balance=0 , overdraft = -100 ):
+    def __init__(self, owner, number, balance=0 , overdraft = bank_config.overdraft_limit ):
         super().__init__(owner, number, balance)
         self.overdraft = overdraft
 
@@ -99,7 +122,7 @@ class CurrentAccount(Account):
 
 
 
-
+# factory method
 class AccountFactory:
     @staticmethod
     def create(kind , owner , number, balance  , interest = 0 , overdraft = 0 ):
