@@ -278,7 +278,7 @@ def bfs(graph, start_node):
 
 # Example usage:
 print("BFS Traversal:", bfs(graph, 'A'))
-Output: ['A', 'B', 'C', 'D', 'E', 'F']
+# Output: ['A', 'B', 'C', 'D', 'E', 'F']
 
 
 
