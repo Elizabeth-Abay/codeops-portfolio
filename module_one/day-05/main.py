@@ -1,54 +1,85 @@
-from abc import ABC , abstractmethod
+# from ./day04.account.py import Account
 
+# my_acc = Account('Elizabeth' , '123456' , 7000)
+# my_acc.statement()
 
-class Vehicle(ABC):    
-    def __init__(self , make , model):
-        self.model = model
-        self.make =  make 
-
-
-    def describe(self):
-        print(f"{self.model} and {self.make}") 
-
-    @abstractmethod
-    def wheels(self):
-        pass
-    # abstract method wont have a method
-
-
-    
-
-class Car(Vehicle):
-    def __init__(self , make , model):
-        super().__init__( make , model)
-
-    def wheels(self):
-        return 4
-
-
-class Truck(Vehicle):
-    def __init__(self , make , model , capacity):
-        super().__init__( make , model)
-        self.capacity = capacity
-
-
-    def describe(self):
-        print( f"{self.model} and {self.make} and {self.capacity}")
-
-    def wheels(self):
-        return 8
-    
+# check out how to import and worrk
 
 
 
-# vehicle = Vehicle('vitara' , 'xyz')
-car = Car('toyota' , 'yaris')
-truck = Truck('byd' , 'executive' , 32)
+class Account:
+    def __init__(self , owner , number , balance = 0):
+        self.owner = owner
+        self.number = number
+        self.__balance = balance
 
+    def get_balance(self):
+        return self.__balance
 
-vehicle_arr = [ car , truck]
-
-for item in vehicle_arr:
-    item.describe()
-    
+    def deposit(self , amount):
+        if amount <= 0:
+            print("Deposit can't be less than or equal to 0")
+            return
         
+        self.__balance += amount
+
+    def withdraw(self , amount):
+        if amount <= 0:
+            print("Withdraw amount can't be less than or equal to 0")
+            return
+        
+        self.__balance -= amount
+
+
+    def statement(self):
+        # u can call methods in here
+        print(f"{self.owner} - {self.number} - {self.get_balance()}")
+
+
+
+
+
+
+class SavingsAccount(Account):
+    def __init__(self, owner, number, balance=0 , rate=0):
+        super().__init__(owner, number, balance)
+        self.rate = rate
+
+    def add_interest(self):
+        # means u will update the balance
+        old_balance = self.get_balance()
+        # self.__balance = old_balance + (old_balance * self.rate) 
+        self.__balance += (self.__balance * self.rate)
+        return self.__balance
+    
+    def statement(self):
+        print(f"{self.owner} - {self.number} - {self.get_balance()} , SavingsAccount")
+    
+
+
+class CurrentAccount(Account):
+    def __init__(self, owner, number, balance=0):
+        super().__init__(owner, number, balance)
+
+    def withdraw(self, amount):
+        # 
+        return super().withdrawal(amount)
+    
+
+    def statement(self):
+        print(f"{self.owner} - {self.number} - {self.get_balance()} , CheckingsAccount")
+
+
+
+my_acc = Account('Elizabeth' , '45667' , 990)
+my_current_acc = CurrentAccount('Elizabeth1' , '456367' , 990)
+my_saving_acc = SavingsAccount('Elizabeth2' , '456647' , 950)
+
+
+accounts = [ my_acc ,my_current_acc , my_saving_acc ]
+
+
+for x in accounts:
+    x.statement()
+
+    
