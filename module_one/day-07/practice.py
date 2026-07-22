@@ -1,73 +1,156 @@
-import sys
-import importlib
-from pathlib import Path
+import time
+from collections import deque
 
 
-# Path(__file__)  - returns the current path - parent - 07 , parent - the folder that contains day 6 folder too
-parent_dir = Path(__file__).resolve().parent.parent
-sys.path.append(str(parent_dir))
-# sys.path is a list for python to look for things
+# Exercise 1: Name the Big-O
+print("--- Exercise 1: Big-O Snippets ---")
+
+# 1. List Indexing: O(1) - Constant time because lists are array-based and access is via direct index calculation.
+sample_list = [10, 20, 30, 40]
+element = sample_list[2]
+
+# 2. Single Loop: O(n) - Linear time because the loop runs proportional to the length of the list.
+for item in sample_list:
+    pass
+
+# 3. Nested Loop: O(n^2) - Quadratic time because for every element in the list, it iterates through the list again.
+for i in sample_list:
+    for j in sample_list:
+        pass
+
+# 4. Dict Lookup: O(1) - Average constant time because dictionary keys are mapped directly via hash functions.
+sample_dict = {"a": 1, "b": 2}
+val = sample_dict.get("b")
+
+# 5. Binary Search: O(log n) - Logarithmic time because it halves the search space in each step.
+def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+print("Big-O explanation completed in comments.\n")
 
 
 
-accounts = importlib.import_module('day-06.accounts')
+# Exercise 2: List vs. Dict Lookup
+print("--- Exercise 2: List vs Dict Lookup ---")
 
-interest = 0.15
-overdraft = -100
+N = 100_000
+# Create data structures with 100,000 account numbers
+accounts_list = [f"ACC_{i:06d}" for i in range(N)]
+accounts_dict = {f"ACC_{i:06d}": True for i in range(N)}
+
+# Target near the end
+target = f"ACC_{N - 2:06d}"
+
+# Time List Search: O(n)
+start_time = time.perf_counter()
+_ = target in accounts_list
+list_time = time.perf_counter() - start_time
+
+# Time Dict Search: O(1)
+start_time = time.perf_counter()
+_ = target in accounts_dict
+dict_time = time.perf_counter() - start_time
+
+print(f"List Lookup Time: {list_time:.6f} seconds")
+print(f"Dict Lookup Time: {dict_time:.6f} seconds\n")
 
 
 
-class AccountRegistry:
-    def __new__(cls):
-        cls.array_of_accs = {}
+# Exercise 3: Build a Stack
+print("--- Exercise 3: Stack (Reverse Names) ---")
 
-        return super().__new__(cls)
+class Stack:
+    def __init__(self):
+        self._items = []
+
+    def push(self, item):
+        self._items.append(item)
+
+    def pop(self):
+        if not self.is_empty():
+            return self._items.pop()
+        raise IndexError("pop from empty stack")
+
+    def peek(self):
+        if not self.is_empty():
+            return self._items[-1]
+        return None
+
+    def is_empty(self):
+        return len(self._items) == 0
+
+# Reverse a list of names using the stack
+names = ["Alice", "Bob", "Charlie", "Diana"]
+stack = Stack()
+
+for name in names:
+    stack.push(name)
+
+reversed_names = []
+while not stack.is_empty():
+    reversed_names.append(stack.pop())
+
+print(f"Original names: {names}")
+print(f"Reversed names: {reversed_names}\n")
 
 
-    def append_new(self , acc_num , acc_obj : accounts.Account):
-        self.array_of_accs[acc_num] = acc_obj
 
+# Exercise 4: Build a Queue (collections.deque)
+print("--- Exercise 4: Queue (Bank Line) ---")
+bank_queue = deque()
+# Enqueue five customers
+customers = ["Alice", "Bob", "Charlie", "Diana", "Evan"]
+for customer in customers:
+    print(f"Customer {customer} entered the line.")
+    bank_queue.append(customer)
+
+print("\nServing customers:")
+# Serve them in FIFO order
+while bank_queue:
+    served_customer = bank_queue.popleft()
+    print(f"Now serving: {served_customer}")
+print()
+
+
+
+# Exercise 5: Singly Linked List
+print("--- Exercise 5: Singly Linked List ---")
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def push_front(self, value):
+        new_node = Node(value)
+        new_node.next = self.head
+        self.head = new_node
 
     def print_all(self):
-        for key , val in self.array_of_accs.items():
-            print('[' , key , '->' , val.__dict__ , ']')
+        current = self.head
+        elements = []
+        while current:
+            elements.append(str(current.value))
+            current = current.next
+        print(" -> ".join(elements) + " -> None")
 
 
+# Quick test for LinkedList
+ll = LinkedList()
+ll.push_front(10)
+ll.push_front(20)
+ll.push_front(30)
 
-account_registery = AccountRegistry()
-
-continue_req = True
-
-while continue_req:
-    name = input('enter the name of the owner : ')
-    number = input('enter the account number : ')
-    balance = int(input('input the initial amount of the balance : '))
-    type = input('the type of the account , either current or saving : ')
-
-
-    new_acc = accounts.AccountFactory.create(kind = type ,owner = name , number = number , balance = balance , interest = interest , overdraft = overdraft )
-    account_registery.append_new(number , new_acc)
-
-
-    wish_to_continue = input('do u wish to continue t - continue or f - to quit : ')
-    
-
-    continue_req = (wish_to_continue == 't')
-
-
-    # print(new_acc.__dict__)
-    # to put the object in its dictionary form
-
-
-
-account_registery.print_all()
-
-
-
-
-
-
-
-
-
-        
+print("Linked List elements:")
+ll.print_all()
