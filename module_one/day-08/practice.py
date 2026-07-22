@@ -1,8 +1,6 @@
 import random
 
 # 1. Recursive Sum & Count Down
-
-
 def total(nums):
     """Recursively calculates the sum of a list of numbers."""
     if not nums:
