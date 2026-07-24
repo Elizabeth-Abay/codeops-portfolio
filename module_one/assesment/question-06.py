@@ -10,6 +10,7 @@ def digitalClock(seconds):
 
     # Handle rollover past 24 hours (86400 seconds)
     seconds = seconds % SECONDS_IN_A_DAY
+    # to remove the day
 
     # Extract hours, minutes, and remaining seconds
     hours = seconds // 3600
