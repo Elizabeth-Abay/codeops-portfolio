@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habesha Eatery | Reservation & Menu</title>
+    <meta name="description" content="Habesha Eatery landing page featuring online reservations, Ethiopian menu pricing, and store location.">
+</head>
+<body>
+    <header>
+        <h1>Habesha Eatery</h1>
+        <nav>
+            <!-- Navigation links can go here -->
+        </nav>
+    </header>
+
+    <main>
+        <!-- Reservation Section -->
+        <section>
+            <h2>Table Reservation</h2>
+            <form action="#" method="POST" style="margin: 10px;">
+                <label for="name">
+                    Full name :
+                    <input id="name" name="name" type="text" style="margin: 10px;" required>
+                </label> 
+                <br>
+
+                <label for="email">
+                    Email :
+                    <input id="email" name="email" type="email" style="margin: 10px;" required>
+                </label>
+                <br>
+
+                <label for="tel">
+                    Phone number (09xxxxxxxx) :
+                    <input id="tel" name="tel" type="tel" pattern="09[0-9]{8}" style="margin: 10px;" required placeholder="0912345678" title="Must be a valid 10-digit Ethiopian number starting with 09">
+                </label>
+                <br>
+
+                <label for="date">
+                    Reservation Date :
+                    <input id="date" name="date" type="date" style="margin: 10px;" required>
+                </label>
+                <br>
+
+                <label for="party-size">
+                    Party Size (1–20) :
+                    <input id="party-size" name="party-size" type="number" min="1" max="20" style="margin: 10px;" required>
+                </label>
+                <br>
+
+                <label for="special-request" style="margin: 10px;">
+                    Special Request : 
+                </label>
+                <textarea id="special-request" name="special-request" style="margin: 10px; width: 300px; height: 70px;"></textarea>
+                <br>
+
+                <button type="submit" style="margin: 10px;">Submit</button>
+            </form>
+        </section>
+
+        <!-- Menu Section -->
+        <section>
+            <h2>Our Menu</h2>
+            <table style="border: 2px solid black;">
+                <caption>Habesha Eatery Food Menu & Prices (ETB)</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Dish Name</th>
+                        <th scope="col">Price (ETB)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Beyaynet</th>
+                        <td>200 ETB</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Shiro</th>
+                        <td>100 ETB</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Misir</th>
+                        <td>200 ETB</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Gomen</th>
+                        <td>200 ETB</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Dnch</th>
+                        <td>100 ETB</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Keysir</th>
+                        <td>200 ETB</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Media Section -->
+        <section>
+            <h2>Location & Gallery</h2>
+            
+            <!-- Hero / Food Image with alt and lazy loading -->
+            <picture>
+                <img src="../images/food.png" alt="Traditional Ethiopian dish served on Injera" loading="lazy" width="500">
+            </picture>
+
+            <br><br>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/_DEMN6hb1Ug?si=6SLqWN6iQLhioQgh&amp;start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <!-- Embedded Google Map iframe with title attribute -->
+            <iframe 
+                title="Habesha Eatery Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15761.543452904838!2d38.7577605!3d9.0300000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set" 
+                width="560" 
+                height="315" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Habesha Eatery. All rights reserved.</p>
+    </footer>
+</body>
+</html>
