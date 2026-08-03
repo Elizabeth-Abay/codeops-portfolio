@@ -1,0 +1,112 @@
+*{
+    margin : 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* this is aimed to make the pages remove the default margin and padding */
+/* and also make sure the box size wont grow due to added margin and paddings */
+
+
+
+
+/* the main theme for the project - habeshan restaurant */
+/* the main color  */
+
+:root{
+    --primary-color : rgb(11, 165, 44);
+    --secondary-color : rgb(9, 70, 22);
+    --font-color : rgb(9, 34, 33);
+    --bg-color : rgb(221, 226, 175);
+    --font-for-h2 : rgb(18, 23, 95);
+    --submit-btn-color : rgb(57, 57, 158);
+}
+/* root is the html elt and the body */
+
+
+
+
+.edu-vic-wa-nt-hand{
+    font-family: "Edu VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+.playwrite-nz-guides-regular {
+    font-family: "Playwrite NZ Guides", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+body{
+    background-color: var(--bg-color);
+    width: 100vw;
+    height: 100vh;
+    /* why is it giving me 100vh but scrollable */
+
+}
+
+
+header{
+    width: 100vw;
+    height: 100px;
+    /* border: solid black 1px; */
+    padding: 5px;
+}
+
+#proj-title{
+    color: var(--font-color);
+    margin: 10px 40vw;
+    width: 300px;
+}
+
+
+
+#hero-section{
+    width: 100vw;
+    height: 180px;
+    padding: 20px;
+    /* border: solid black 1px; */
+}
+
+
+.h2-in-section{
+    margin: 2px 30vw;
+    color: var(--font-for-h2) ;
+}
+
+
+#hero-section p{
+    font-family: italic;
+}
+
+
+form label{
+    margin : 10px;
+}
+
+form input{
+    padding: 5px;
+    margin: 10px;
+    width: 300px;
+}
+
+
+form button{
+    width : 200px;
+    height: 40px;
+    padding: 5px;
+    margin-inline : 40vw;
+    margin-block : 10px;
+    font-family: "Edu VIC WA NT Hand" ;
+    font-weight: 500;
+    border: none;
+}
+
+
+#submit-button{
+    background-color: var(--submit-btn-color);
+}
