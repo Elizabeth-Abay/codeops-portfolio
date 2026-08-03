@@ -13,12 +13,13 @@
 /* the main color  */
 
 :root{
-    --primary-color : rgb(11, 165, 44);
+    --primary-color : rgb(103, 177, 119);
     --secondary-color : rgb(9, 70, 22);
     --font-color : rgb(9, 34, 33);
     --bg-color : rgb(221, 226, 175);
     --font-for-h2 : rgb(18, 23, 95);
     --submit-btn-color : rgb(57, 57, 158);
+    --submit-feedback-btn : rgb(158,90, 16)
 }
 /* root is the html elt and the body */
 
@@ -94,6 +95,21 @@ form input{
     width: 300px;
 }
 
+/* 
+input[type="text"]{
+  width: 300px;
+} */
+
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
 
 form button{
     width : 200px;
@@ -109,4 +125,142 @@ form button{
 
 #submit-button{
     background-color: var(--submit-btn-color);
+    margin-bottom: 30px;
+}
+
+#menu-section{
+  /* border: solid black 2px; */
+  padding: 10px 15px;
+  margin : 10px;
+}
+
+#menu-section h2{
+  margin : 10px 5px;
+}
+
+
+.menu-container {
+  background-color: #195bbd;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 550px;
+  width: 100%;
+}
+
+/* Header */
+.menu-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+
+}
+
+.menu-container .currency {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: normal;
+  display: block;
+  margin-top: 4px;
+}
+
+/* table */
+.menu-table {
+  width: 80vw;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.menu-table th {
+  background-color: var(--primary-color); /* Warm burgundy accent color */
+  color: #ffffff;
+  font-weight: 600;
+  padding: 14px 16px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.menu-table th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.menu-table th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.menu-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eef0f2;
+  color: #333333;
+}
+
+/* Row & Column Specifics */
+.menu-table .category {
+  font-weight: 700;
+  color: #204568;
+  vertical-align: middle;
+  background-color: #fdfbf7;
+  border-right: 2px solid #8b263e;
+}
+
+.menu-table .dish-name {
+  font-weight: 700;
+}
+
+.menu-table .price {
+  font-weight: 600;
+  color: var(--font-color);
+  text-align: right;
+}
+
+.menu-table .price::after{
+  content : " ETB";
+  display : inline
+}
+
+
+.menu-table .text-right {
+  text-align: right;
+}
+
+/* Hover Effect for Readability */
+.menu-table tbody tr:hover td:not(.category) {
+  background-color: #f8f9fa;
+}
+
+
+input[type="radio"]{
+  width: 30px;
+  margin : 10px
+}
+
+
+#feed-back-form label{
+  font-family: "Edu VIC WA NT Hand";
+  /* border : solid black 2px; */
+}
+
+
+#feedback-submit{
+  background-color: var(--submit-feedback-btn);
+}
+
+
+iframe{
+  margin: 30px;
+  width : 100vw
+}
+
+
+footer{
+  background-color: var(--secondary-color);
+}
+
+audio{
+  margin: 10px;
+  height: 50px;
+  margin-left : 100px
 }

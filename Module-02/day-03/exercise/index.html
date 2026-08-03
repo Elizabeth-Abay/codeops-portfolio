@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habesha Eatery | Reservation & Menu</title>
-    <meta name="description" content="Habesha Eatery landing page featuring online reservations, Ethiopian menu pricing, audio greeting, and feedback form.">
+    <meta name="description"
+        content="Habesha Eatery landing page featuring online reservations, Ethiopian menu pricing, audio greeting, and feedback form.">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playwrite+NZ+Guides&display=swap"
+        rel="stylesheet">
 
-    
+
     <!-- <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet"> -->
 
 
 </head>
+
 <body>
     <header>
-        <h1 id = "proj-title" class="edu-vic-wa-nt-hand">Habesha Eatery</h1>
+        <h1 id="proj-title" class="edu-vic-wa-nt-hand">Habesha Eatery</h1>
         <nav>
             <!-- Navigation links -->
         </nav>
@@ -26,104 +32,104 @@
 
     <main>
         <!-- 1. Audio Greeting Section -->
-        <section id = "hero-section">
-            <h2 class = "h2-in-section edu-vic-wa-nt-hand edu-vic-wa-nt-hand">Welcome Greeting</h2>
+        <section id="hero-section">
+            <h2 class="h2-in-section edu-vic-wa-nt-hand edu-vic-wa-nt-hand">Welcome Greeting</h2>
             <p class="playwrite-nz-guides-regular">Listen to a special welcome greeting from our kitchen team:</p>
-            <!-- <audio controls>
+            <audio controls>
                 <source src="../assets/greeting.mp3" type="audio/mpeg">
                 <source src="../assets/greeting.ogg" type="audio/ogg">
                 Your browser does not support the audio element.
-            </audio> -->
+            </audio>
         </section>
 
         <!-- Reservation Section -->
-        <section id = "reservation-section">
-            <h2 class = "h2-in-section edu-vic-wa-nt-hand edu-vic-wa-nt-hand" >Table Reservation</h2>
+        <section id="reservation-section">
+            <h2 class="h2-in-section edu-vic-wa-nt-hand edu-vic-wa-nt-hand">Table Reservation</h2>
             <form action="#" method="POST">
                 <div class="form-entries">
-                    <label for="name" class = "playwrite-nz-guides-regular">Full name</label>
+                    <label for="name" class="playwrite-nz-guides-regular">Full name</label>
                     <input id="name" name="name" type="text" required placeholder="Abebe Bikila">
                 </div>
 
                 <div class="form-entries">
-                    <label for="email" class = "playwrite-nz-guides-regular">Email</label>
+                    <label for="email" class="playwrite-nz-guides-regular">Email</label>
                     <input id="email" name="email" type="email" required placeholder="example@domain.com">
                 </div>
 
                 <div class="form-entries">
-                    <label for="tel" class = "playwrite-nz-guides-regular">Phone number (09xxxxxxxx)</label>
-                    <input id="tel" name="tel" type="tel" pattern="09[0-9]{8}" required placeholder="0912345678" title="Must be a valid 10-digit Ethiopian number starting with 09">
+                    <label for="tel" class="playwrite-nz-guides-regular">Phone number (09xxxxxxxx)</label>
+                    <input id="tel" name="tel" type="tel" pattern="09[0-9]{8}" required placeholder="0912345678"
+                        title="Must be a valid 10-digit Ethiopian number starting with 09">
                 </div>
 
                 <div class="form-entries">
-                    <label for="date" class = "playwrite-nz-guides-regular">Reservation Date</label>
+                    <label for="date" class="playwrite-nz-guides-regular">Reservation Date</label>
                     <input id="date" name="date" type="date" required>
                 </div>
 
                 <div class="form-entries">
-                    <label for="party-size" class = "playwrite-nz-guides-regular">Party Size (1–20)</label>
+                    <label for="party-size" class="playwrite-nz-guides-regular">Party Size (1–20)</label>
                     <input id="party-size" name="party-size" type="number" min="1" max="20" required placeholder="2">
                 </div>
 
                 <div class="form-entries">
-                    <label for="special-request" class = "playwrite-nz-guides-regular">Special Request</label>
+                    <label for="special-request" class="playwrite-nz-guides-regular">Special Request</label>
                     <textarea id="special-request" name="special-request" rows="3"></textarea>
                 </div>
 
-                <button type="submit" id = "submit-button">Submit Reservation</button>
+                <button type="submit" id="submit-button">Submit Reservation</button>
             </form>
         </section>
 
+
+
         <!-- 2. Menu Section with Categories using ROWSPAN -->
-        <section id = "menu-section">
-            <h2 class = "h2-in-section edu-vic-wa-nt-hand">Menu</h2>
+        <section id="menu-section">
+            <h2>Habesha Eatery Food Menu & Prices <span class="currency">(ETB)</span></h2>
+
             <table class="menu-table">
-                <caption>Habesha Eatery Food Menu & Prices (ETB)</caption>
                 <thead>
-                    <tr class = "table-row">
-                        <th scope="col">Category</th>
-                        <th scope="col">Dish Name</th>
-                        <th scope="col">Price</th>
+                    <tr>
+                        <th>Category</th>
+                        <th>Dish Name</th>
+                        <th class="text-right">Price</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Category 1: Vegetarian (Rowspan = 3) -->
-                    <tr class = "table-row">
-                        <th scope="rowgroup" rowspan="3" class="category-header">Vegetarian Dishes</th>
-                        <th scope="row">Beyaynet</th>
-                        <td class = "price">200</td>
+                    <tr>
+                        <td rowspan="3" class="category">Vegetarian Dishes</td>
+                        <td class="dish-name">Beyaynet</td>
+                        <td class="price">200</td>
                     </tr>
-                    <tr class = "table-row">
-                        <th scope="row">Shiro</th>
-                        <td class = "price">100</td>
+                    <tr>
+                        <td class="dish-name">Shiro</td>
+                        <td class="price">100</td>
                     </tr>
-                    <tr class = "table-row">
-                        <th scope="row">Misir</th>
-                        <td class = "price">200</td>
+                    <tr>
+                        <td class="dish-name">Misir</td>
+                        <td class="price">200</td>
                     </tr>
-
-                    <!-- Category 2: Meat Dishes (Rowspan = 3) -->
-                    <tr class = "table-row">
-                        <th scope="rowgroup" rowspan="3" class="category-header">Meat Dishes</th>
-                        <th scope="row">Doro Wat</th>
-                        <td class = "price">500</td>
+                    <tr>
+                        <td rowspan="3" class="category">Meat Dishes</td>
+                        <td class="dish-name">Doro Wat</td>
+                        <td class="price">500</td>
                     </tr>
-                    <tr class = "table-row">
-                        <th scope="row">Beef Tibs</th>
-                        <td class = "price">450</td>
+                    <tr>
+                        <td class="dish-name">Beef Tibs</td>
+                        <td class="price">450</td>
                     </tr>
-                    <tr class = "table-row">
-                        <th scope="row">Kitfo</th>
-                        <td class = "price">500</td>
+                    <tr>
+                        <td class="dish-name">Kitfo</td>
+                        <td class="price">500</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
         <!-- 3. Customer Feedback Form (3 Input Types) -->
-        <section id = "feed-back">
+        <section id="feed-back">
             <h2>Customer Feedback</h2>
-            <form action="#" method="POST">
+            <form action="#" method="POST" id = "feed-back-form">
                 <!-- Input Type 1: Text -->
                 <div class="form-entry">
                     <label for="reviewer-name">Your Name</label>
@@ -143,36 +149,37 @@
                 <!-- Input Type 3: Textarea -->
                 <div class="form-entry">
                     <label for="comments">Comments & Suggestions</label>
-                    <textarea id="comments" name="comments" rows="4" placeholder="Tell us about your experience..." required></textarea>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Tell us about your experience..."
+                        required></textarea>
                 </div>
 
-                <button type="submit" id = "feedback-submit">Submit Feedback</button>
+                <button type="submit" id="feedback-submit">Submit Feedback</button>
             </form>
         </section>
 
         <!-- Media Section -->
-        <section id = "media-section">
-            <h2 class = "h2-in-section edu-vic-wa-nt-hand">Location & Gallery</h2>
-            
+        <section id="media-section">
+            <h2 class="h2-in-section edu-vic-wa-nt-hand">Location & Gallery</h2>
+
             <picture>
-                <img src="../images/food.png" alt="Traditional Ethiopian dish served on Injera" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+                <img src="../images/food.png" alt="Traditional Ethiopian dish served on Injera" loading="lazy"
+                    style="max-width: 100%; height: auto; border-radius: 8px;">
             </picture>
 
             <br><br>
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/_DEMN6hb1Ug?si=6SLqWN6iQLhioQgh&amp;start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/_DEMN6hb1Ug?si=6SLqWN6iQLhioQgh&amp;start=2"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
             <br>
 
-            <iframe 
-                title="Habesha Eatery Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15761.543452904838!2d38.7577605!3d9.0300000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set" 
-                width="100%" 
-                height="315" 
-                style="border:0; border-radius: 8px;" 
-                allowfullscreen="" 
-                loading="lazy">
+            <iframe title="Habesha Eatery Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15761.543452904838!2d38.7577605!3d9.0300000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85cef5ab402d%3A0x8467b6b037a24d49!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set"
+                width="100%" height="315" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy">
             </iframe>
         </section>
     </main>
@@ -181,4 +188,5 @@
         <p>&copy; 2026 Habesha Eatery. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
