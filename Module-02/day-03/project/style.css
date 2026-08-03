@@ -1,0 +1,116 @@
+:root {
+    /* HSL Color Palette for easy lightness adjustments */
+    --color-bg: hsl(40, 20%, 96%);
+    --color-card-bg: hsl(81, 60%, 74%);
+    --color-primary-hsl: 12, 60%, 42%; /* Rust / Coffee Brown */
+    --color-primary: hsl(var(--color-primary-hsl));
+    --color-text-main: hsl(207, 82%, 13%);
+    --color-text-muted: hsl(252, 12%, 8%);
+    --color-border: hsl(40, 100%, 33%);
+    --space-xs: 10px;    
+    --space-sm:12px;     
+    --space-md: 15px;     
+    --space-lg: 30px;    
+    --space-xl: 20px;         
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-sm);
+}
+
+
+.card {
+    background-color: var(--color-card-bg);
+    width: 100%;
+    max-width: 420px;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    margin: var(--space-sm);
+    
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+
+.badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    background-color: hsl(12, 60%, 95%);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 20px;
+    margin-bottom: var(--space-sm);
+}
+
+.badge::before {
+    content: "Location";
+    margin-right: var(--space-xs);
+    font-weight: 900;
+    color:#140225
+}
+
+.business-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin: 0 0 var(--space-xs) 0;
+}
+
+.tagline {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    
+    /* Generous line-height */
+    line-height: 1.7; 
+    margin: 0 0 var(--space-lg) 0;
+}
+
+
+.card-actions {
+    display: flex;
+}
+
+.btn-contact {
+    width: 100%;
+    padding: var(--space-sm);
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    
+    /* Base HSL Color */
+    background-color: hsl(var(--color-primary-hsl));
+    color: #ffffff;
+    
+    transition: background-color 0.2s ease;
+}
+
+.btn-contact:hover {
+    background-color: hsl(12, 60%, 32%);
+}
