@@ -1,0 +1,279 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: rgb(103, 177, 119);
+    --secondary-color: rgb(9, 70, 22);
+    --font-color: rgb(9, 34, 33);
+    --bg-color: rgb(221, 226, 175);
+    --font-for-h2: rgb(18, 23, 95);
+    --submit-btn-color: rgb(57, 57, 158);
+    --submit-feedback-btn: rgb(158, 90, 16);
+}
+
+.edu-vic-wa-nt-hand {
+    font-family: "Edu VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.playwrite-nz-guides-regular {
+    font-family: "Playwrite NZ Guides", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Step 1: Make .page a Grid with rows auto / 1fr / auto */
+body.page {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* Step 2: Build navbar with Flexbox: logo left, links right, sticky to top */
+header.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+#proj-title {
+    color: #ffffff;
+    margin: 0;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+#hero-section {
+    padding: 20px;
+}
+
+.h2-in-section {
+    margin: 10px 0;
+    color: var(--font-for-h2);
+}
+
+#hero-section p {
+    font-style: italic;
+}
+
+/* Form Styles */
+form label {
+    margin: 10px 0;
+    display: block;
+}
+
+form input {
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    width: 300px;
+    max-width: 100%;
+}
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    margin: 10px 0;
+    font-family: "Edu VIC WA NT Hand";
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 6px;
+}
+
+#submit-button {
+    background-color: var(--submit-btn-color);
+    margin-bottom: 30px;
+}
+
+#menu-section {
+    padding: 20px;
+}
+
+/* Step 3: Lay the menu out with repeat(auto-fit, minmax(220px, 1fr)) */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Step 4 & 5: Card relative positioning + Flexbox column */
+.card {
+    position: relative;          /* Step 5: Positioning context for badge */
+    display: flex;               /* Step 4: Flexbox column layout */
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Step 5: Pin "Popular" badge to a card corner with relative + absolute */
+.popular-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--submit-feedback-btn);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.dish-title {
+    font-size: 1.2rem;
+    color: var(--font-color);
+    margin-bottom: 8px;
+    padding-right: 60px; /* Leave room for popular badge */
+}
+
+.dish-desc {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* Step 4: Price pinned to bottom with margin-top: auto */
+.card-price {
+    margin-top: auto;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Table styling preserved */
+.menu-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.menu-table th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 14px 16px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.menu-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eef0f2;
+    color: #333333;
+}
+
+.menu-table .category {
+    font-weight: 700;
+    color: #204568;
+    vertical-align: middle;
+    background-color: #fdfbf7;
+    border-right: 2px solid #8b263e;
+}
+
+.menu-table .dish-name {
+    font-weight: 700;
+}
+
+.menu-table .price {
+    font-weight: 600;
+    color: var(--font-color);
+    text-align: right;
+}
+
+.menu-table .price::after {
+    content: " ETB";
+    display: inline;
+}
+
+.menu-table .text-right {
+    text-align: right;
+}
+
+.menu-table tbody tr:hover td:not(.category) {
+    background-color: #f8f9fa;
+}
+
+#feed-back {
+    padding: 20px;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin: 5px;
+}
+
+#feed-back-form label {
+    font-family: "Edu VIC WA NT Hand";
+}
+
+#feedback-submit {
+    background-color: var(--submit-feedback-btn);
+}
+
+#media-section {
+    padding: 20px;
+}
+
+iframe {
+    max-width: 100%;
+    margin: 15px 0;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+audio {
+    margin: 10px 0;
+    height: 50px;
+}
