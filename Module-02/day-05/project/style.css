@@ -335,3 +335,55 @@ input[type="radio"] {
     border-radius: 1rem;
     
 }
+
+
+#menu-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
+@media (max-width : 600px){
+    .nav-link{
+        width: 4rem;
+        font-size : 0.72rem
+    }
+
+    .form-entries input,
+    .form-entry input[type="text"] {
+        width: 50%;
+    }
+
+    article{
+        font-size : 2rem
+    }
+
+
+    #menu-grid{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+@media (min-width: 600px) {
+    
+    .form-entries,
+    .form-entry {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .form-entries label,
+    .form-entry label {
+        margin-bottom: 0;
+        width: 35%;
+    }
+
+    .form-entries input,
+    .form-entry input[type="text"] {
+        width: 60%;
+    }
+}
