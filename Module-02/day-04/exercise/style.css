@@ -277,3 +277,10 @@ audio {
     margin: 10px 0;
     height: 50px;
 }
+
+
+/* mobile first means write the css for the smallest page first */
+/* 640 - small , 768 - medium , 1024 - large , 1280 - xl */
+/* when sthg is responsive rows on pc - column in mobile */
+/* fluid grid -- cards wont have break points  */
+/* keyframe animations - from{ initial } and to {destination} */
