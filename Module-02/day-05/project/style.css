@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+
+:root{
+    width: 100vw;
+    height: 100vw;
+    --primary-color : rgb(43, 6, 37);
+    --font-color : white;
+    /* scroll-behavior: none; */
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    /* border: solid black 2px; */
+    width: 100vw;
+    height : 10%;
+    position :fixed;
+    padding : 10px;
+    z-index: 1000;
+    background-color: rgb(141, 163, 182);
+}
+
+header name{
+    width : 14em;
+    /* border: green 10px solid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+}
+
+
+#name{
+    font-family: "Edu VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+}
+
+#pic-container{
+    /* i want this to be circular */
+    /* border: solid black 2px; */
+    border-radius: 20px;
+    height : 2.5rem;
+    width: 2.5em;
+}
+#logo-pic{
+    /* means the ia */
+    object-fit: contain;
+    width: 39px;
+    height: 39px;
+}
+
+.nav-link{
+    width: 5rem;
+    height : 2rem;
+    border-radius: 0.5rem;
+    border : none;
+    /* box-shadow: inset chartreuse; */
+    background-color: var(--primary-color);
+    /* align-text : center */
+}
+
+.nav-link a{
+    color: var(--font-color);
+    text-decoration: none;
+    font-family: "Edu VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+}
+
+
+
+#hero-index{
+    /* border : 3px rgb(94, 12, 25) solid; */
+    width: 100vw;
+    height: 100px;
+    padding-top : 4rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#promo-video{
+    width: 100vw;
+    height: 35rem;
+    position : relative;
+    z-index: 10;
+}
+
+
+#explore-button{
+    position: absolute;
+    z-index: 100;
+    bottom: 100px;
+}
+
+
+
+footer{
+    height : 10vh;
+}
+
+
+
+article{
+    /* border: 1px solid green; */
+    font-family: "Edu VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-size: 2.75rem;
+    padding : 0.75em;
+    border : 1px solid black;
+    border-radius : 2rem;
+    width : 95%;
+    margin : 2rem
+}
+
+
+
+
+footer{
+    width: 100%;
+    min-height: 4rem;
+    border: solid 3px green;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
