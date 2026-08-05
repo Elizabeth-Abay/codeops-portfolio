@@ -130,23 +130,7 @@ article{
     font-weight: bold;
 }
 
-input[type="radio"] {
-    width: auto;
-    margin: 5px;
-}
 
-#feed-back-form label {
-    font-family: "Edu VIC WA NT Hand", cursive;
-    font-optical-sizing: auto;
-    font-weight: bold;
-}
-
-#feedback-submit {
-    background-color: var(--primary-color);
-    font-family: "Edu VIC WA NT Hand", cursive;
-    font-optical-sizing: auto;
-    font-weight: bold;
-}
 
 #media-section {
     padding: 20px;
@@ -225,13 +209,16 @@ input[type="radio"] {
 }
 
 
-#reservation-section{
+#reservation-section , #feed-back{
     padding-top : 4rem;
     display: flex;
     justify-content: center;
     flex-direction:  column;
     /* height: 80vh; */
 }
+
+
+
 
 #reservation-section form{
     display: flex;
@@ -271,7 +258,7 @@ input[type="radio"] {
 }
 
 
-#submit-button{
+#submit-button , #feed{
     width: 10rem;
     margin : 1.5rem;
     color: var(--font-color);
@@ -288,4 +275,63 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+
+#feed-back{
+    height: 92vh;
+    padding : 3rem;
+
+}
+
+
+#feed-back form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-entry{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    /* background-color: #204568; */
+    height: 7rem;
+}
+
+
+.form-entry  label{
+    margin: 1.2rem;
+}
+
+.form-entry input[type="text"]{
+    width: 15rem ;
+    height : 2rem;
+    margin : 1.5rem
+}
+
+input[type="radio"] {
+    width: auto;
+    margin: 5px;
+}
+
+#feed-back-form label {
+    font-family: "Edu VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+}
+
+#feedback-submit {
+    background-color: var(--primary-color);
+    font-family: "Edu VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    border: none;
+    padding: 0.6rem;
+    color : var(--font-color);
+    border-radius: 1rem;
+    
 }

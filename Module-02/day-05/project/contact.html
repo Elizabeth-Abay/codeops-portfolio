@@ -11,8 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habesha Eatery Final</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playwrite+NZ+Guides&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -25,7 +27,7 @@
                 <img id="logo-pic" src="../images/logo.png" alt="restaurant-logo">
             </picture>
 
-            
+
             <p id="name">Royal Bistro</p>
 
         </name>
@@ -54,23 +56,31 @@
 
     </header>
 
-    <main>
-        <hero>
-            <!-- will be a video  -->
-            <button>
-                <a href="./explore.html">Explore Us</a>
-            </button>
-        </hero>
+    <main id="feed-back">
+        <h2>Customer Feedback</h2>
+        <form action="#" method="POST" id="feed-back-form">
+            <div class="form-entry">
+                <label for="reviewer-name">Your Name</label>
+                <input type="text" id="reviewer-name" name="reviewer-name" placeholder="Enter your name" required>
+            </div>
 
-        <article>
-            <!-- this will contain the about story -->
-        </article>
-        <!-- hero - clear call-to-action -->
-        <!-- fluid heading with damp() -->
-        <!-- about / story section -->
-        <!-- menu grid - flows accordingly -->
-        <!-- reservation form -->
+            <div class="form-entry">
+                <label>Overall Experience</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="rating" value="excellent" required> Excellent</label>
+                    <label><input type="radio" name="rating" value="good"> Good</label>
+                    <label><input type="radio" name="rating" value="average"> Average</label>
+                </div>
+            </div>
 
+            <div class="form-entry">
+                <label for="comments">Comments & Suggestions</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Tell us about your experience..."
+                    required></textarea>
+            </div>
+
+            <button type="submit" id="feedback-submit">Submit Feedback</button>
+        </form>
     </main>
 
     <footer>
