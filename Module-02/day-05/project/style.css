@@ -123,18 +123,37 @@ article{
 }
 
 
-
-
-footer{
-    width: 100%;
-    min-height: 4rem;
-    /* border: solid 3px green; */
-    background-color: black;
-    color: var(--font-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#feed-back {
+    padding: 20px;
+    font-family: "Edu VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
 }
+
+input[type="radio"] {
+    width: auto;
+    margin: 5px;
+}
+
+#feed-back-form label {
+    font-family: "Edu VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+}
+
+#feedback-submit {
+    background-color: var(--primary-color);
+    font-family: "Edu VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+}
+
+#media-section {
+    padding: 20px;
+}
+
+
+
 
 
 
@@ -203,4 +222,70 @@ footer{
 
 .menu-table tbody tr:hover td:not(.category) {
     background-color: #f8f9fa;
+}
+
+
+#reservation-section{
+    padding-top : 4rem;
+    display: flex;
+    justify-content: center;
+    flex-direction:  column;
+    /* height: 80vh; */
+}
+
+#reservation-section form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin : 0.5rem
+}
+
+
+.form-entries{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding : 0.5rem;
+    margin: 0.5rem;
+    font-family: "Edu VIC WA NT Hand", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+
+}
+
+.form-entries label{
+    margin: 0.3rem;
+}
+
+
+.form-entries input{
+    margin: 0.3rem;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+}
+
+.form-entries input:focus{
+    outline : var(--primary-color) solid 1px
+}
+
+
+#submit-button{
+    width: 10rem;
+    margin : 1.5rem;
+    color: var(--font-color);
+}
+
+
+
+footer{
+    width: 100%;
+    min-height: 4rem;
+    /* border: solid 3px green; */
+    /* background-color: black;
+    color: var(--font-color); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

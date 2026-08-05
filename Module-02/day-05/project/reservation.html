@@ -11,8 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habesha Eatery Final</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playwrite+NZ+Guides&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -25,7 +27,7 @@
                 <img id="logo-pic" src="../images/logo.png" alt="restaurant-logo">
             </picture>
 
-            
+
             <p id="name">Royal Bistro</p>
 
         </name>
@@ -54,23 +56,42 @@
 
     </header>
 
-    <main>
-        <hero>
-            <!-- will be a video  -->
-            <button>
-                <a href="./explore.html">Explore Us</a>
-            </button>
-        </hero>
+    <main id="reservation-section">
+        <h2 class="h2-in-section edu-vic-wa-nt-hand">Table Reservation</h2>
+        <form action="#" method="POST">
+            <div class="form-entries">
+                <label for="name" class="playwrite-nz-guides-regular">Full name</label>
+                <input id="name" name="name" type="text" required placeholder="Abebe Bikila">
+            </div>
 
-        <article>
-            <!-- this will contain the about story -->
-        </article>
-        <!-- hero - clear call-to-action -->
-        <!-- fluid heading with damp() -->
-        <!-- about / story section -->
-        <!-- menu grid - flows accordingly -->
-        <!-- reservation form -->
+            <div class="form-entries">
+                <label for="email" class="playwrite-nz-guides-regular">Email</label>
+                <input id="email" name="email" type="email" required placeholder="example@domain.com">
+            </div>
 
+            <div class="form-entries">
+                <label for="tel" class="playwrite-nz-guides-regular">Phone number (09xxxxxxxx)</label>
+                <input id="tel" name="tel" type="tel" pattern="09[0-9]{8}" required placeholder="0912345678"
+                    title="Must be a valid 10-digit Ethiopian number starting with 09">
+            </div>
+
+            <div class="form-entries">
+                <label for="date" class="playwrite-nz-guides-regular">Reservation Date</label>
+                <input id="date" name="date" type="date" required>
+            </div>
+
+            <div class="form-entries">
+                <label for="party-size" class="playwrite-nz-guides-regular">Party Size (1–20)</label>
+                <input id="party-size" name="party-size" type="number" min="1" max="20" required placeholder="2">
+            </div>
+
+            <div class="form-entries">
+                <label for="special-request" class="playwrite-nz-guides-regular">Special Request</label>
+                <textarea id="special-request" name="special-request" rows="3"></textarea>
+            </div>
+
+            <button type="submit" id="submit-button" class="nav-link">Submit Reservation</button>
+        </form>
     </main>
 
     <footer>
