@@ -128,10 +128,79 @@ article{
 footer{
     width: 100%;
     min-height: 4rem;
-    border: solid 3px green;
+    /* border: solid 3px green; */
     background-color: black;
-    color: white;
+    color: var(--font-color);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+
+/* the menu page */
+#menu-body{
+    background-color: rgb(152, 155, 140);
+}
+
+.card-price {
+    margin-top: auto;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Table styling preserved */
+.menu-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.menu-table th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 14px 16px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.menu-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eef0f2;
+    color: #333333;
+}
+
+.menu-table .category {
+    font-weight: 700;
+    color: #204568;
+    vertical-align: middle;
+    background-color: #fdfbf7;
+    border-right: 2px solid #8b263e;
+}
+
+.menu-table .dish-name {
+    font-weight: 700;
+}
+
+.menu-table .price {
+    font-weight: 600;
+    color: black;
+    text-align: right;
+}
+
+.menu-table .price::after {
+    content: " ETB";
+    display: inline;
+}
+
+.menu-table .text-right {
+    text-align: right;
+}
+
+.menu-table tbody tr:hover td:not(.category) {
+    background-color: #f8f9fa;
 }

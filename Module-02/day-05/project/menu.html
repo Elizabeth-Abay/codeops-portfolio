@@ -11,12 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habesha Eatery Final</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playwrite+NZ+Guides&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playwrite+NZ+Guides&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body id = "menu-body">
     <header>
         <!-- make the header sticky -->
         <!-- logo on the left , links right -->
@@ -25,7 +27,7 @@
                 <img id="logo-pic" src="../images/logo.png" alt="restaurant-logo">
             </picture>
 
-            
+
             <p id="name">Royal Bistro</p>
 
         </name>
@@ -55,27 +57,95 @@
     </header>
 
     <main>
-        <hero>
-            <!-- will be a video  -->
-            <button>
-                <a href="./explore.html">Explore Us</a>
-            </button>
-        </hero>
+        <section id="menu-section">
+            <h2 class="h2-in-section edu-vic-wa-nt-hand">Featured Dishes</h2>
 
-        <article>
-            <!-- this will contain the about story -->
-        </article>
-        <!-- hero - clear call-to-action -->
-        <!-- fluid heading with damp() -->
-        <!-- about / story section -->
-        <!-- menu grid - flows accordingly -->
-        <!-- reservation form -->
+            <!-- Step 3: Auto-fit menu grid of Flexbox cards -->
+            <div class="menu-grid">
+
+                <!-- Step 4 & 5: Flexbox card with absolute "Popular" badge -->
+                <article class="card">
+                    <!-- Step 5: Pin "Popular" badge to corner -->
+                    <span class="popular-badge">Popular</span>
+                    <h3 class="dish-title">Doro Wat</h3>
+                    <p class="dish-desc">Traditional Ethiopian chicken stew simmered in spicy berbere sauce, served with
+                        boiled egg and injera.</p>
+                    <!-- Step 4: Price pinned to bottom -->
+                    <span class="card-price">500 ETB</span>
+                </article>
+
+                <article class="card">
+                    <h3 class="dish-title">Beyaynet</h3>
+                    <p class="dish-desc">A colorful platter of assorted vegetarian stews including lentils, chickpeas,
+                        and greens on fresh injera.</p>
+                    <span class="card-price">200 ETB</span>
+                </article>
+
+                <article class="card">
+                    <!-- Step 5: Pin "Popular" badge to corner -->
+                    <span class="popular-badge">Popular</span>
+                    <h3 class="dish-title">Beef Tibs</h3>
+                    <p class="dish-desc">Tender sautéed beef strips with onions, garlic, rosemary, and green peppers.
+                    </p>
+                    <span class="card-price">450 ETB</span>
+                </article>
+
+                <article class="card">
+                    <h3 class="dish-title">Shiro Wat</h3>
+                    <p class="dish-desc">Rich and flavorful slow-cooked chickpea powder stew served piping hot in a
+                        traditional clay pot.</p>
+                    <span class="card-price">100 ETB</span>
+                </article>
+
+            </div>
+
+            <br><br>
+
+            <!-- Table section preserved -->
+            <h2>Habesha Eatery Food Menu & Prices <span class="currency">(ETB)</span></h2>
+            <table class="menu-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Dish Name</th>
+                        <th class="text-right">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3" class="category">Vegetarian Dishes</td>
+                        <td class="dish-name">Beyaynet</td>
+                        <td class="price">200</td>
+                    </tr>
+                    <tr>
+                        <td class="dish-name">Shiro</td>
+                        <td class="price">100</td>
+                    </tr>
+                    <tr>
+                        <td class="dish-name">Misir</td>
+                        <td class="price">200</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="category">Meat Dishes</td>
+                        <td class="dish-name">Doro Wat</td>
+                        <td class="price">500</td>
+                    </tr>
+                    <tr>
+                        <td class="dish-name">Beef Tibs</td>
+                        <td class="price">450</td>
+                    </tr>
+                    <tr>
+                        <td class="dish-name">Kitfo</td>
+                        <td class="price">500</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
     </main>
 
     <footer>
-        <!-- address , phone , hours -->
-
+        Bole, Addis Ababa
     </footer>
 
 </body>
