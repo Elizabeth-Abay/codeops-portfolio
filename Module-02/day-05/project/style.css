@@ -20,17 +20,21 @@ header{
     width: 100vw;
     height : 10%;
     position :fixed;
-    padding : 10px;
+    padding : 10px 40px;
+    /* padding-right : 10px; */
     z-index: 1000;
     background-color: rgb(141, 163, 182);
+    /* margin-right : 5px; */
 }
 
-header name{
-    width : 14em;
+#name-box{
+    width : 10em;
     /* border: green 10px solid; */
     display: flex;
     justify-content: space-between;
     align-items: start;
+    flex-direction: row;
+
 
 }
 
@@ -53,6 +57,15 @@ header name{
     object-fit: contain;
     width: 39px;
     height: 39px;
+}
+
+
+
+#nav-bar{
+    /* border : 2px solid black; */
+    display: flex;
+    width : 25rem;
+    justify-content: space-between;
 }
 
 .nav-link{
@@ -86,25 +99,34 @@ header name{
     flex-direction: column;
 }
 
+#video-container{
+    width : 100vw;
+    height : 32rem;
+    font-size : 10px;
+    position : relative;
+    /* border: solid black 1px; */
+}
+
 
 #promo-video{
     width: 100vw;
-    height: 35rem;
-    position : relative;
-    z-index: 10;
+    height: 50em;
+    position : absolute;
+    top : 0
 }
 
 
-#explore-button{
+/* #explore-button{
     position: absolute;
-    z-index: 100;
-    bottom: 100px;
-}
-
+    /* z-index: 100; */
+    /* bottom: 10px;
+    left : 300px }*/
 
 
 footer{
-    height : 10vh;
+    height : 100px;
+    position : fixed;
+    bottom : 0  
 }
 
 
@@ -116,7 +138,7 @@ article{
     font-weight: bold;
     font-size: 2.75rem;
     padding : 0.75em;
-    border : 1px solid black;
+    border : 3px solid rgb(45, 107, 199);
     border-radius : 2rem;
     width : 95%;
     margin : 2rem
@@ -135,10 +157,6 @@ article{
 #media-section {
     padding: 20px;
 }
-
-
-
-
 
 
 /* the menu page */
@@ -218,8 +236,6 @@ article{
 }
 
 
-
-
 #reservation-section form{
     display: flex;
     justify-content: center;
@@ -266,17 +282,6 @@ article{
 
 
 
-footer{
-    width: 100%;
-    min-height: 4rem;
-    /* border: solid 3px green; */
-    /* background-color: black;
-    color: var(--font-color); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 
 
 #feed-back{
@@ -284,7 +289,6 @@ footer{
     padding : 3rem;
 
 }
-
 
 #feed-back form{
     display: flex;
@@ -333,7 +337,10 @@ input[type="radio"] {
     padding: 0.6rem;
     color : var(--font-color);
     border-radius: 1rem;
-    
+}
+
+#menu-section{
+    padding : 0.7em;
 }
 
 
@@ -347,7 +354,19 @@ input[type="radio"] {
 @media (max-width : 600px){
     .nav-link{
         width: 4rem;
-        font-size : 0.72rem
+        font-size : 0.6rem;
+        /* padding : 2px; */
+        margin : 1px;
+        border: rgb(164, 235, 33) 2px solid;
+    }
+
+    #name-box{
+        margin-right : 2px;
+    }
+
+    #nav-bar{
+        width : 20rem;
+        /* padding : 10px 4px; */
     }
 
     .form-entries input,
@@ -356,7 +375,8 @@ input[type="radio"] {
     }
 
     article{
-        font-size : 2rem
+        font-size : 1.5rem;
+        margin : 2px;
     }
 
 

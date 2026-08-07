@@ -1,0 +1,23 @@
+Javascript 
+
+runs on browser engine of chrome written in C 
+Javascript vs Java -- interpreted , descriptive - js java - declarative
+hoisting
+
+do it mobile first approach
+then edit the thing to fit larger screen
+
+
+
+variable declaration 
+var types - primitive - string(combo of special charachters) , undefined - declared not assigned , null - intentionally empty , symbol - means unique things, bigint - very large integers
+non-primitive - object and array
+
+
+var - global redeclare & reassign , let - reassign not redeclare , const - not reassign not redeclare
+error - syntax and semantics / logical - code runs unexpected output 
+
+
+
+Type casting 
+Number(x)

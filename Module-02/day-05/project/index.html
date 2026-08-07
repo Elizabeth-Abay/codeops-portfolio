@@ -22,7 +22,7 @@
     <header>
         <!-- make the header sticky -->
         <!-- logo on the left , links right -->
-        <name>
+        <div id = "name-box">
             <picture id="pic-container">
                 <img id="logo-pic" src="../images/logo.png" alt="restaurant-logo">
             </picture>
@@ -30,12 +30,12 @@
 
             <p id="name">Royal Bistro</p>
 
-        </name>
+        </div>
 
 
 
 
-        <nav>
+        <nav id ="nav-bar">
             <button class="nav-link">
                 <a href="./index.html">Home</a>
 
@@ -59,14 +59,24 @@
     <main id="hero-index">
         <hero>
             <!-- will be a video  -->
-            <iframe id="promo-video" width="560" height="315"
-                src="https://www.youtube.com/embed/rI8FOLA-9XM?si=Q53xDJeBdm6twro7" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <button id = "explore-button" class = "nav-link">
-                <a href="./explore.html">Explore Us</a>
-            </button>
+            <div id="video-container">
+                <iframe id="promo-video"
+                    src="https://www.youtube.com/embed/rI8FOLA-9XM?si=Q53xDJeBdm6twro7" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+                    <!-- anything written inside the iframe is treated as a fallback text that wld be displayed iff the video wldnt show-->
+
+
+                </iframe>
+
+                <!-- <button id="explore-button" class="nav-link">
+                    <a href="./explore.html">Explore Us</a>
+                </button> -->
+            </div>
+
+
         </hero>
 
         <article>
