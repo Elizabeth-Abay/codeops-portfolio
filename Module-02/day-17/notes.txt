@@ -1,0 +1,37 @@
+You have to assign variable names for functions to avoid hoisting issue
+
+let fucn = function x() {} // is better to avoid hoisting
+
+... - as a parameter use rest operator - means i will give u variable number of args so keep accepting them as an array
+
+why do we want to avoid function hoisting tho??
+
+single parameter kehone u can write without a () around
+function returning function u can use anonymous function
+
+
+scope and closure
+
+Inheritance how does it work
+function is like a value - returned and also assigned into a variable
+Higher order - 2 things return a function , or accepts function as a parameter either or both -- it is an umbrella term
+Higher order will be put into the event loop
+
+First order - call stack lay execute yederegal
+A function that returns function --- factory function
+
+
+closure -- sthg outer lay yalew cldnt access inner
+Higher order- factory  return miareg or also callback accept miareg
+
+
+const Greeting2 = () => { 
+    this is not higher order bc it returns a string
+    let lastName = 'Abay'
+    let inner = (fname) => {
+        console.log(`${fname} ${lastName}`)
+    }
+
+
+    return `Hello ${inner('Me')}`
+}
