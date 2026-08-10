@@ -21,3 +21,55 @@ error - syntax and semantics / logical - code runs unexpected output
 
 Type casting 
 Number(x)
+
+
+type coercion - weakly typed -- means without setting we can assign type and string yeneberebet lay we can have number later
+Nan - not a number Number('Hellow')
+
+
+strict equality
+
+precedence or priority - parenthesis , negarion , and , or PNAO - priority level
+interpreted and line by line , and it will go left to right
+
+
++ - addition , unary - means convert to number - +("10") , concatenate
+`` lay we can have js logic in there = template literal
+
+
+ternary operator , isNan() check we can use it in conditional rendering 
+we can use ternary operator with else if
+x > 30 ? "A" : "B"
+x > 30 ? "A" : (x > 20 ? "B" : "C")
+
+Preincrement - will update both
+Postincrement - will update the var bcha 
+
+x = 10
+y = x++ -- will only update x and return ye x old value
+y = ++x -- will update x and assign it to y
+
+
+x = 11
+console.log(`${x++  + ++x}`) -- 24
+
+
+Scope - visiblity /  accessibility of variables
+Hoisting - decides where it exists
+var - global scope - redeclare and reassign and let - is block / function scope and const is also block and function scope
+
+
+global scope yalew var and functions - hoisted new
+global - outside function
+functional scope - inside a function
+block scope - inside loop ..
+
+
+
+hoisted means before being initialized it can be accessed - var and function
+access yemnaregebat bota temporal dev zone -- 
+
+before being initialized access mareg 
+how to avoid - strict , arrow function , let and const metekem and 
+use strict key word -- cant access variables before being declared
+
