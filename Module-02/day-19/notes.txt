@@ -1,0 +1,18 @@
+Work on representing elements using object
+
+Css - select , then alter
+
+
+when ur html loads then browser wld change it into a tree - js changes those tree and then reload yederegal
+
+dom parent - window
+
+
+Node list - all thing written
+Html collection - every valid tag
+
+
+document.getEltByClass('class') returns an html collection - live html collection - automatically updated
+document.querySelectorAll() - static nodelist and it can accept id , class .. selector - static , cant be updated
+document.getEltByTagName('tag') returns an html collection 
+document.getEltById('id') // the first elt with that id - single elt
