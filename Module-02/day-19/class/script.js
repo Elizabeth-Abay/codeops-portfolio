@@ -13,7 +13,12 @@
 
 // html collection
 const logoDiv = document.getElementsByClassName("logo")
-// console.log(logoDiv)
+console.log(Array.from(logoDiv))
+
+
+for (elt of logoDiv){
+    console.log(elt)
+}
 
 // this will give us html collection - 2 elements
 // then going into each elt 2 things 
