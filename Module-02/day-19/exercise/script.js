@@ -1,12 +1,28 @@
 let formElt = document.getElementById('add-items');
 let counterSection = document.getElementById('counter');
 let namesClass = document.getElementsByClassName('name');
-let addingOneItemBtn = document.getElementsByClassName('added');
-let removingOneItemBtn = document.getElementById('bought');
+// let addingOneItemBtn = document.getElementsByClassName('added');
+// let removingOneItemBtn = document.getElementsByClassName('bought');
 
 
+let addOneItem = (e) => {
+    // console.log('Add button clicked')
+    let btnClicked = e.target;
 
-function removeOneItem(e) {
+    // closest will reach upward for the parent , grandparent ..
+    let amtContainer = btnClicked.closest('.container').querySelector('.amount');
+
+    if (!amtContainer) return alert('Error cldnt find the amt container')
+
+    let currentAmount = Number(amtContainer.textContent)
+
+    currentAmount += 1
+
+    amtContainer.textContent = currentAmount
+
+}
+
+let removeOneItem = (e) => {
     // find the amount in that container and update that
     let btnClicked = e.target; // gives us the element that was clicked
 
@@ -23,21 +39,9 @@ function removeOneItem(e) {
 }
 
 
-function addOneItem(e) {
-    let btnClicked = e.target;
 
-    // closest will reach upward for the parent , grandparent ..
-    let amtContainer = btnClicked.closest('.container').querySelector('.amount');
 
-    if (!amtContainer) return alert('Error cldnt find the amt container')
 
-    let currentAmount = Number(amtContainer.textContent)
-
-    currentAmount += 1
-
-    amtContainer.textContent = currentAmount
-
-}
 
 
 formElt.addEventListener('submit', (e) => {
@@ -83,10 +87,14 @@ formElt.addEventListener('submit', (e) => {
         boughtBtn.classList.add('bought');
         boughtBtn.textContent = '-';
 
+        boughtBtn.addEventListener('click', removeOneItem)
+        
         // Create the "+" (added) button
         const addedBtn = document.createElement('button');
         addedBtn.classList.add('added');
         addedBtn.textContent = '+';
+
+        addedBtn.addEventListener('click' , addOneItem)
 
         containerDiv.appendChild(nameContainer)
         containerDiv.appendChild(amtContainer)
