@@ -1,0 +1,172 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --accent-color: #10b981;
+    --accent-hover: #059669;
+    --danger-color: #ef4444;
+    --danger-hover: #dc2626;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+    margin: 0;
+}
+
+.app-container {
+    background: var(--card-bg);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid var(--border-color);
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent-color);
+}
+
+button {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.counter {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.counter span {
+    color: var(--accent-color);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+li.bought {
+    opacity: 0.5;
+    border-color: transparent;
+}
+
+li.bought .item-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.item-text {
+    cursor: pointer;
+    flex: 1;
+    font-weight: 500;
+}
+
+.delete-btn {
+    background: transparent;
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+}
+
+.delete-btn:hover {
+    background: var(--danger-color);
+    color: white;
+}
+.item-actions {
+    display:    flex;
+    gap:    8px;
+}
+
+.toggle-btn    {
+    background:    transparent;
+    color:    var(--accent-color);
+    border:    1px    solid    var(--accent-color);
+    padding:    4px    10px;
+    font-size:    0.85rem;
+    border-radius:    6px;
+}
+
+.toggle-btn:hover{
+    background:    var(--accent-color);
+    color:    #ffffff;
+}
+
+li.bought.toggle-btn    {
+    border-color:    var(--text-muted);
+    color:    var(--text-muted);
+}
+
+li.bought .toggle-btn:hover{
+    background:    var(--text-muted);
+    color: var(--card-bg);
+}
+
