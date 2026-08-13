@@ -1,0 +1,4 @@
+Asynchronous programming in javascript
+
+file / video uploading 
+synch - sequential
