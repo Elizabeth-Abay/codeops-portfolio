@@ -13,4 +13,32 @@ different storage types in a browser
 downloading videos on youtube
 
 
-sensitive info shldnt be there bc any js file cld access it
+sensitive info shldnt be there bc any js file cld access it'
+
+window document
+
+
+incognito - nthg will be saved
+local storage share yederegal  - that is why hackable
+
+device finger printing
+
+onChange event
+
+
+Serializateion - means making sthg into a flat string - stringify()
+parse - means changing from string to object
+
+Defensive programming-  means assume everything outside ur code maybe wrong
+
+form - lay everything is a string
+e.preventDefault() - means reload slemidereg
+
+Both client and server side validation
+error - clearly menager
+
+/regexp/
+
+let pattern = /^fs$/ {} - quantifier , [a - b] - range specifier , optional - *
+
+pattern.test('sthg to be matched') - returns true or false
