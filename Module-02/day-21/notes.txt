@@ -1,0 +1,16 @@
+client side storage
+
+local storage - can store string only - stays until being cleaned eg videos that get requested too often 5 to 10 MB
+key value pair  - on the hard disk
+session storage  - can store string only - for the life time of the table  5 to 10 MB
+indexed DB - any file types
+cache storage
+cookie storage
+
+
+
+different storage types in a browser
+downloading videos on youtube
+
+
+sensitive info shldnt be there bc any js file cld access it
