@@ -28,7 +28,7 @@ form.addEventListener('submit', (e) => {
     let password = formData.get('password');
     let email = formData.get('email');
 
-    let namePattern = /^\w\s+$/
+    let namePattern = /^\w{2,}$/
     let phoneNumberPattern =  /^(?:\+?251|0?)(?:9|7)\d{8}$/
     // working /^(?:09|07)\d{8}$/
     // optional or option - ?
