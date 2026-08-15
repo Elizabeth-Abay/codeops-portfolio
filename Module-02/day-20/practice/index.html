@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch States Demo</title>
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <div id="status">Loading...</div>
+    <div id="content"></div>
+
+    <script>
+        async function loadData() {
+            const statusEl = document.getElementById('status');
+            const contentEl = document.getElementById('content');
+
+            // 1. Loading State
+            statusEl.textContent = 'Loading...';
+            contentEl.textContent = '';
+
+            try {
+                const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+
+                if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
+
+                const data = await res.json();
+
+                // 2. Success State
+                statusEl.textContent = '';
+                contentEl.textContent = `Success! Title: "${data.title}"`;
+            } catch (err) {
+                // 3. Error State
+                statusEl.textContent = '';
+                contentEl.textContent = `Failed to load: ${err.message}. (Toggle network to Offline in DevTools to test)`;
+            }
+        }
+
+        loadData();
+    </script>
+</body>
+
+</html>
