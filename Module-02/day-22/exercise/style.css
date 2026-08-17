@@ -36,6 +36,8 @@ body , .light {
     padding: 20px;
 }
 
+
+/* body has id */
 #body{
     display: flex;
     flex-direction: column;

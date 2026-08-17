@@ -30,3 +30,5 @@ Download or clone all repository files into a single project directory.
 Open index.html in any modern web browser (or launch with Live Server in VS Code).
 
 Enter an amount in ETB, select a target currency from the dropdown, and click Convert Now.
+
+Done

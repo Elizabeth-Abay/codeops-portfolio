@@ -25,6 +25,7 @@ let numberOfConvertedVals = 0; // at the start nthg will be converted
 
 
 
+// toggling the theme
 let themeToggler = (e) => {
     state.light = !state.light;
 
