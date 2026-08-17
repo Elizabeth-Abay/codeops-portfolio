@@ -10,7 +10,7 @@ let dropDownItem = document.getElementById("currency-rates");
 let formConverter = document.getElementById("exchange-form");
 let currencyInput = document.getElementById("amt");
 let resultContainer = document.getElementById('result-container');
-let watchList = document.getElementById('watch-list');
+let watchList = document.getElementById('watch-list-section');
 
 let numberOfConvertedVals = 0; // at the start nthg will be converted
 
@@ -21,7 +21,7 @@ let convertValue = async (e) => {
     // find the selected value's 
     let amount = Number(currencyInput.value);
 
-    if (isNaN(amount)) return alert('The amount must be a number');
+    if (isNaN(amount) || amount <= 0) return alert('The amount must be a number and positive');
 
     let valueItem = dropDownItem.value;
 
@@ -42,7 +42,7 @@ let convertValue = async (e) => {
 
     ++numberOfConvertedVals;
 
-    convertedAmount = amount * ratesObj[valueItem]
+    convertedAmount = (amount * ratesObj[valueItem]).toFixed(2)
 
     console.log(amount, convertedAmount);
 
@@ -52,6 +52,9 @@ let convertValue = async (e) => {
     displayResult(amount, convertedAmount, from = 'ETB', to = valueItem)
 
     localStorage.setItem(valueItem, ratesObj[valueItem]);
+
+
+    formConverter.reset();
 
     reloadWatchList();
 
@@ -89,14 +92,17 @@ let createWatchListElt = (key, storedInfo) => {
     let infoContainerDiv = document.createElement('div');
 
     infoContainerDiv.innerHTML = `<b>${key} : ${storedInfo}</b>`
+    infoContainerDiv.classList.add('watchlist-item');
 
     let removalButton = document.createElement('button');
 
-    removalButton.textContent = '-'
+    removalButton.classList.add('remove-btn')
+
+    removalButton.textContent = 'x'
 
     // either u have to set it into the dataset object to make it accessible through the .getAttribute('key')
     // or u can have it as this  removalButton.key = key and access it normally with e.target.key no .getAttribute('key')
-    removalButton.setAttribute('key' , key) // button will have id same as the key in the local storage
+    removalButton.setAttribute('key', key) // button will have id same as the key in the local storage
 
     removalButton.addEventListener('click', removeFromLocalStorage);
 

@@ -11,26 +11,37 @@
 
 <body>
     <header>
-        <h1>Birr Watch</h1>
-        <h2>Convert to ETB</h2>
+        <h1 class="brand-title">Birr Watch</h1>
+        <h2 class="subtitle">Convert to ETB</h2>
 
     </header>
 
     <main>
+        <section id="converter-card">
+
+        </section>
         <form id="exchange-form">
-            <label for="amt">Amount</label>
-            <input type="number" name="amount" id="amt">
+            <div class="form-group">
+                <label for="amt">Amount(ETB)</label>
+                <input type="number" name="amount" id="amt" class="input-field" placeholder="Enter amount...">
+            </div>
 
-            <select id="currency-rates"></select>
+            <div class="form-group">
+                <label for="currency-rates">Target Currency</label>
+                <select id="currency-rates" class="select-field"></select>
+            </div>
 
 
-            <button type="submit">Convert Now</button>
+            <button type="submit" class="primary-btn">Convert Now</button>
         </form>
 
 
         <section id="result-container"></section>
 
-        <section id="watch-list"></section>
+        <section id="watch-list-section">
+            <h3>Saved Watch List</h3>
+            <div id="watch-list" class="watchlist-container"></div>
+        </section>
 
     </main>
 
