@@ -10,9 +10,18 @@ let dropDownItem = document.getElementById("currency-rates");
 let formConverter = document.getElementById("exchange-form");
 let currencyInput = document.getElementById("amt");
 let resultContainer = document.getElementById('result-container');
-let watchList = document.getElementById('watch-list-section');
+let watchList = document.getElementById('watch-list');
 
 let numberOfConvertedVals = 0; // at the start nthg will be converted
+
+
+const displayStatus = (message, type = 'loading') => {
+    resultContainer.innerHTML = '';
+    const statusDiv = document.createElement('div');
+    statusDiv.className = `display-div ${type}`;
+    statusDiv.textContent = message;
+    resultContainer.appendChild(statusDiv);
+};
 
 
 let convertValue = async (e) => {
@@ -21,44 +30,56 @@ let convertValue = async (e) => {
     // find the selected value's 
     let amount = Number(currencyInput.value);
 
-    if (isNaN(amount) || amount <= 0) return alert('The amount must be a number and positive');
+    let submitBtn = formConverter.querySelector('button[type="submit"]');
 
+    if (isNaN(amount) || amount <= 0) {
+        displayStatus('Please enter a valid positive number.', 'error');
+        return;
+    }
     let valueItem = dropDownItem.value;
 
-    console.log(valueItem);
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Converting...';
+    displayStatus('Fetching latest exchange rates...', 'loading');
 
-    let response = await fetch(API);
+    try {
+        let response = await fetch(API);
 
-    let jsonified = await response.json(); // will already make it an object
+        let jsonified = await response.json(); // will already make it an object
 
-    let ratesObj = jsonified.rates;
+        let ratesObj = jsonified.rates;
 
-    // ratesObj = JSON.parse(ratesObj); parse - string to obj
-    // stringify - obj - string
+        // ratesObj = JSON.parse(ratesObj); parse - string to obj
+        // stringify - obj - string
 
-    // then access the ratesObj
+        // then access the ratesObj
 
-    // console.log(ratesObj)
+        // console.log(ratesObj)
 
-    ++numberOfConvertedVals;
+        ++numberOfConvertedVals;
 
-    convertedAmount = (amount * ratesObj[valueItem]).toFixed(2)
+        convertedAmount = (amount * ratesObj[valueItem]).toFixed(2)
 
-    console.log(amount, convertedAmount);
+        console.log(amount, convertedAmount);
 
-    // put into the result div
+        // put into the result div
 
-    // display the result and add info to the local storage
-    displayResult(amount, convertedAmount, from = 'ETB', to = valueItem)
+        // display the result and add info to the local storage
+        displayResult(amount, convertedAmount, from = 'ETB', to = valueItem)
 
-    localStorage.setItem(valueItem, ratesObj[valueItem]);
+        localStorage.setItem(valueItem, ratesObj[valueItem]);
 
+        reloadWatchList();
 
-    formConverter.reset();
+    } catch (error) {
+        console.error('Conversion error:', error);
+        displayStatus(`Error: ${error.message || 'Network error occurred.'}`, 'error');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Convert Now';
+        formConverter.reset();
 
-    reloadWatchList();
-
-
+    }
 
 }
 
@@ -196,7 +217,8 @@ let displayResult = (amount, convertedAmount, from, to) => {
     resultContainer.textContent = ''
     let displayDiv = document.createElement('div');
 
-    displayDiv.classList.add('display-div')
+    // displayDiv.classList.add('display-div')
+    displayDiv.className = 'display-div success';
 
 
     displayDiv.textContent = `${amount} ${from}  = ${convertedAmount} ${to}`;
@@ -219,7 +241,7 @@ let displayResult = (amount, convertedAmount, from, to) => {
 
 formConverter.addEventListener('submit', convertValue)
 
-// reloadWatchList()
+document.addEventListener('DOMContentLoaded', reloadWatchList);
 
 
 // when i click - the thing below is getting removed

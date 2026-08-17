@@ -240,3 +240,37 @@ label {
 .remove-btn:active {
     transform: scale(0.95);
 }
+
+
+/* Disabled state for button during loading */
+.primary-btn:disabled {
+    background: var(--text-muted);
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+}
+
+/* Status variants for display container */
+.display-div.loading {
+    color: var(--text-muted);
+    background: rgba(148, 163, 184, 0.1);
+    border-color: rgba(148, 163, 184, 0.3);
+    animation: pulse 1.5s infinite;
+}
+
+.display-div.error {
+    color: var(--danger);
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.display-div.success {
+    color: var(--accent-emerald);
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
