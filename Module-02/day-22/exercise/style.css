@@ -16,7 +16,17 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-body {
+body , .light {
+    background: radial-gradient(circle at top right, #8a85cc, var(--bg-dark));
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.dark{
     background: radial-gradient(circle at top right, #1e1b4b, var(--bg-dark));
     color: var(--text-main);
     min-height: 100vh;
@@ -26,13 +36,32 @@ body {
     padding: 20px;
 }
 
+#body{
+    display: flex;
+    flex-direction: column;
+}
+
+#theme-set{
+    width: 120px;
+    height: 50px;
+    background-color: rgb(2, 4, 7);
+    color: wheat;
+    border-radius: 20px;
+    border: solid green 1px;
+}
+
+
 .app-container {
     width: 100%;
     max-width: 480px;
 }
 
 header {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    /* text-align: center; */
     margin-bottom: 24px;
 }
 

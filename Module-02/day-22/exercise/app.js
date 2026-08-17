@@ -5,15 +5,41 @@
 // for every convert make an api request
 
 
+let state = {
+    light : true
+}
+
+
 const API = 'https://open.er-api.com/v6/latest/ETB';
 let dropDownItem = document.getElementById("currency-rates");
 let formConverter = document.getElementById("exchange-form");
 let currencyInput = document.getElementById("amt");
 let resultContainer = document.getElementById('result-container');
 let watchList = document.getElementById('watch-list');
+let themeToggleBtn = document.getElementById('theme-set');
+let body = document.getElementById('body')
+
+
 
 let numberOfConvertedVals = 0; // at the start nthg will be converted
 
+
+
+let themeToggler = (e) => {
+    state.light = !state.light;
+
+    if (state.light)  {
+        body.classList.remove('light');
+        body.classList.add('dark')
+    } else{
+        body.classList.add('light');
+        body.classList.remove('dark')
+    }
+
+}
+
+
+themeToggleBtn.addEventListener('click' , themeToggler)
 
 const displayStatus = (message, type = 'loading') => {
     resultContainer.innerHTML = '';
