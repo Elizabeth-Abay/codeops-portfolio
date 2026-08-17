@@ -18,7 +18,6 @@ let numberOfConvertedVals = 0; // at the start nthg will be converted
 let convertValue = async (e) => {
     e.preventDefault();
     // make the request
-
     // find the selected value's 
     let amount = Number(currencyInput.value);
 
@@ -28,9 +27,7 @@ let convertValue = async (e) => {
 
     console.log(valueItem);
 
-    let response = await fetch(
-        API
-    );
+    let response = await fetch(API);
 
     let jsonified = await response.json(); // will already make it an object
 
@@ -50,7 +47,13 @@ let convertValue = async (e) => {
     console.log(amount, convertedAmount);
 
     // put into the result div
+
+    // display the result and add info to the local storage
     displayResult(amount, convertedAmount, from = 'ETB', to = valueItem)
+
+    localStorage.setItem(valueItem, ratesObj[valueItem]);
+
+    reloadWatchList();
 
 
 
@@ -58,17 +61,17 @@ let convertValue = async (e) => {
 
 
 let removeFromLocalStorage = (e) => {
+    // removes from the local storage and calls the re rendering of watchlist
+    // watch list's source of truth is the localstorage
     let buttonClicked = e.target;
 
+    let keyRemoved = buttonClicked.getAttribute('key');
 
-    console.log('Remove button clicekd')
-    let idRemoved = buttonClicked.id;
-    
-    console.log("Removing from local Storage")
+    console.log(`Remove button clicekd for id number in the localstorage of ${keyRemoved} `)
 
-    console.log(idRemoved)
+    // then remove from the local storage
 
-    localStorage.removeItem(idRemoved);
+    localStorage.removeItem(keyRemoved);
 
     reloadWatchList()
 
@@ -76,71 +79,109 @@ let removeFromLocalStorage = (e) => {
 }
 
 
-let createWatchListElt = (storedInfo, i) => {
+let createWatchListElt = (key, storedInfo) => {
     console.log('WatchList being created')
     // create a div and removal button
 
+    // "ANG": 0.011113
+
+
     let infoContainerDiv = document.createElement('div');
 
-    infoContainerDiv.textContent = storedInfo
+    infoContainerDiv.innerHTML = `<b>${key} : ${storedInfo}</b>`
 
     let removalButton = document.createElement('button');
 
     removalButton.textContent = '-'
 
-    removalButton.id = i;
+    // either u have to set it into the dataset object to make it accessible through the .getAttribute('key')
+    // or u can have it as this  removalButton.key = key and access it normally with e.target.key no .getAttribute('key')
+    removalButton.setAttribute('key' , key) // button will have id same as the key in the local storage
 
     removalButton.addEventListener('click', removeFromLocalStorage);
 
-    infoContainerDiv.appendChild(removalButton)
+    infoContainerDiv.appendChild(removalButton);
 
     watchList.appendChild(infoContainerDiv)
+
+    console.log(`In creating this the id attached is ${key} and the storedVal is ${storedInfo}`)
 }
 
 
 let reloadWatchList = () => {
     // get the watchlist container and loop and show the results
 
-    console.log('Reloadinf watch list')
+    console.log('Reloading watch list')
 
-    watchList.textContent = ''
-    let i = 1
-    while (i <= numberOfConvertedVals) {
-        let storedInfo = localStorage.getItem(i)
+    console.log(`local stoage lay yalut when reload is called expected ${numberOfConvertedVals}`)
 
-        console.log(numberOfConvertedVals)
-        console.log(storedInfo)
+    watchList.innerHTML = '' // make it empty
 
-        // meaning if there is no item found with
-        //  that key it will return null - falsy value
+    let i = 1 // id to get the items
+
+    // get the objects from the localstorage
+
+    let allDataStored = { ...localStorage };
+
+    // this will give us the local storage object
+
+
+
+    for (key of Object.keys(allDataStored)) {
+        console.log(`Accessing the info of ${key}`);
+
+        let storedInfo = localStorage.getItem(key)
 
         if (!storedInfo) continue;
-        createWatchListElt(storedInfo , i);
 
-        i += 1
+        console.log(`storedInfo of ${key} is ${storedInfo}.`);
+
+        createWatchListElt(key, storedInfo)
     }
+
+
+    // having continue in the loop will cause i not to be incremened
+    // // numberofConvertedVals - is the number of items converted
+    // while (i <= numberOfConvertedVals) {
+    //     console.log(`Accessing the info of ${i}`);
+
+    //     let storedInfo = localStorage.getItem(i)
+
+    //     if (!storedInfo) continue;
+
+    //     console.log(`storedInfo of ${i} is ${storedInfo}.`);
+
+    //     createWatchListElt(storedInfo, i);
+
+
+    //     // if storedInfo = null = false 
+    //     // if (!storedInfo) continue;
+    //     i += 1
+
+
+
+    // }
 }
 
 
-let addToLocalStorage = (e) => {
-    // get the parent's value
-    console.log('Add button clicked')
-    let buttonClicked = e.currentTarget
-    let parent = buttonClicked.closest('.display-div');
+// let addToLocalStorage = (e) => {
+//     // get the parent's value
+//     console.log('Add button clicked')
+//     let buttonClicked = e.currentTarget
+//     let parent = buttonClicked.closest('.display-div');
 
-    let value = parent.textContent;
-    // from this to this , 
-    // value - bold
+//     let value = parent.textContent;
+//     // from this to this , 
+//     // value - bold
 
-    localStorage.setItem(numberOfConvertedVals, value);
+//     localStorage.setItem(numberOfConvertedVals, value);
 
-    // only sets it to local stroage 
+//     // only sets it to local stroage 
 
-    reloadWatchList();
-}
+//     reloadWatchList();
+// }
 
 
-//  ! sthg to note is convert now shld also add to watch list
 
 
 
@@ -153,14 +194,16 @@ let displayResult = (amount, convertedAmount, from, to) => {
 
 
     displayDiv.textContent = `${amount} ${from}  = ${convertedAmount} ${to}`;
+
+
     // also there needs to be a + button
-    let addToWatchList = document.createElement('button');
-    addToWatchList.textContent = '+'
+    // let addToWatchList = document.createElement('button');
+    // addToWatchList.textContent = '+'
 
 
-    displayDiv.appendChild(addToWatchList)
+    // displayDiv.appendChild(addToWatchList)
 
-    addToWatchList.addEventListener('click', addToLocalStorage)
+    // addToWatchList.addEventListener('click', addToLocalStorage)
 
 
     resultContainer.appendChild(displayDiv)
@@ -170,3 +213,7 @@ let displayResult = (amount, convertedAmount, from, to) => {
 
 formConverter.addEventListener('submit', convertValue)
 
+// reloadWatchList()
+
+
+// when i click - the thing below is getting removed
