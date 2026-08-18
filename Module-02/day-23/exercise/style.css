@@ -1,0 +1,32 @@
+:root{
+    /* color combination and variables */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#main-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* menu and order container part */
+    width: 90%;
+    height: 90vh;
+}
+
+
+#menu-container{
+    display: grid;
+    width: 70%;
+}
+
+#order-container{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+
+}
