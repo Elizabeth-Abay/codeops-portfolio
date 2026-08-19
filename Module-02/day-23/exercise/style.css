@@ -1,5 +1,6 @@
 :root{
     /* color combination and variables */
+    --primary-background : rgba(190, 169, 169, 0.644);
 }
 
 *{
@@ -8,25 +9,247 @@
     box-sizing: border-box;
 }
 
-
-#main-section{
+#search-bar-container{
+    width: 100%;
+    height: 50px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    /* border: green 2px solid; */
+    padding: 10px;
+    margin : 10px
+}
+
+
+#search-form{
+    /* background-color: rgb(212, 7, 144); */
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#search-bar{
+    width: 100%;
+    height: 90%;
+    border: solid black 2px;
+    border-radius: 8px;
+    padding: 10px;
+    /* background-color: black; */
+}
+
+
+#main-section{ 
+    /* for larger screen */
+    /* display: grid;
+    grid-template-columns: 70% 25%;
+    column-gap: 5px; */
+    /* max-column-gap : ; */
     /* menu and order container part */
-    width: 90%;
-    height: 90vh;
+    /* mobile first  */
+    display: flex;
+    flex-direction: column;
+    /* border : solid 2px blue; */
+    width: 100%;
+    height: 100vh;
+    padding : 10px;
+}
+
+#menu-box{
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    padding: 15px;
+    /* border: 2px solid rgb(255, 13, 13); */
+    overflow-y: scroll;
+
+
 }
 
 
 #menu-container{
+    padding: 5px;
     display: grid;
-    width: 70%;
+    grid-template-columns:repeat(1 , 1fr) ;
+    /* grid-template-rows: repeat(1fr , 4); */
 }
 
-#order-container{
+#order-container-box{
+    margin: 10px 0;
+    height: 35%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    width: 20%;
+    align-items: center;
+    /* border : solid rgb(15, 10, 20) 3px; */
+    /* background-color: aqua; */
 
 }
+
+
+.menu-display{
+    width: 200px;
+    height : 180px;
+    border:  solid 1px black;
+    margin: 10px;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-background);
+    border-radius: 5px;
+
+}
+
+
+.add-to-cart-btn{
+    width: 80%;
+    height: 30px;
+    padding: 5px;
+    margin: 10px;
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color: brown;
+}
+
+
+.price{
+    color : brown;
+}
+
+.order-container{
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+    margin: 5px;
+    padding: 6px;
+
+}
+
+.removeBtn{
+    width: 20px;
+    height: 30px;
+    background-color: brown;
+    color: white;
+    border : none;
+    border-radius: 5px;
+}
+
+
+@media (480px < width <= 530px) {
+    /* make the menu box be a grid */
+    #menu-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit , minmax(200px, 2fr));
+    }
+    
+}
+
+
+@media (530px < width <= 768px){
+    #search-bar{
+        width: 80%;
+    }
+
+    #main-section{
+        display: grid;
+        grid-template-columns: 68% 30%;
+        column-gap: 5px;
+    } 
+
+    #menu-box{
+        height: 80vh;
+    }
+
+    #menu-container{
+        display: grid;
+        /* means if the remaining space can have 200px it will else it will put it below */
+        grid-template-columns: repeat(auto-fit , minmax(200px, 2fr));
+        padding: 2px;
+        /* background-color: blueviolet; */
+    }
+
+    #order-container-box{
+        height: 80vh;
+    }
+
+
+}
+
+@media (768px <= width <= 860px) {
+    #search-bar{
+        width: 50%;
+    }
+
+    #menu-box{
+        height: 80vh;
+    }
+
+    #menu-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit , minmax(200px, 3fr));
+        padding: 2px;
+        overflow-y: auto;
+        /* overflow-x: hidden; */
+        /* background-color: blueviolet; */
+    }
+
+    #order-container-box{
+        height: 80vh;
+    }
+
+
+    .menu-display{
+        width: 180px;
+        height: 200px;
+    }
+
+
+    #main-section{
+        display: grid;
+        grid-template-columns: 68% 30%;
+        column-gap: 5px;
+    } 
+}
+
+
+@media (860px <= width){
+    #search-bar{
+        width: 50%;
+    }
+
+    #menu-box{
+        height: 80vh;
+    }
+
+    #menu-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit , minmax(200px, 5fr));
+        padding: 2px;
+        overflow-x: hidden;
+        /* width : */
+        /* background-color: blueviolet; */
+    }
+
+    #order-container-box{
+        height: 80vh;
+    }
+
+
+    .menu-display{
+        width: 150px;
+        height: 200px;
+    }
+
+
+    #main-section{
+        display: grid;
+        grid-template-columns: 68% 30%;
+        column-gap: 5px;
+    } 
+}
+    

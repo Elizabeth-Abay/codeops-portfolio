@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Ordering Page</title>
     <link href="./style.css" rel="stylesheet">
+    <script src="./script.js" defer></script>
 </head>
+
 <body>
     <header id="header">
         <!-- will contain the search bar -->
+        <section id="search-bar-container">
+            <form id="search-form">
+                <input id="search-bar" type="text" placeholder="Search for items">
+            </form>
+        </section>
     </header>
-    
+
     <main id="main-section">
-        <section id = "menu-container"></section>
-        <section id = "order-container"></section>
+        <section id="menu-box">
+            <h2>Our Menu</h2>
+            <section id="menu-container">
+                <!-- <div class="menu-display">
+                    <h3>Doro Wot</h3>
+                    <strong>Spicy</strong>
+                    <strong>Main</strong>
+                    <strong>240 ETB</strong>
+                    <button class="add-to-cart-btn"> Add to cart</button>
+                </div> -->
+            </section>
+        </section>
+
+        <section id="order-container-box">
+            <!-- <div class="order-container">
+                <h4>Tibs ( * 2)</h4>
+                <h4>450 ETB</h4>
+                <button class="removeBtn">X</button>
+            </div> -->
+        </section>
     </main>
 
     <footer>
 
     </footer>
 </body>
+
 </html>
