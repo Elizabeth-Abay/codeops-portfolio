@@ -5,46 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Ordering Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
     <script src="./script.js" defer></script>
 </head>
 
 <body>
     <header id="header">
-        <!-- will contain the search bar -->
         <section id="search-bar-container">
             <form id="search-form">
-                <input id="search-bar" type="text" placeholder="Search for items">
+                <input id="search-bar" type="text" placeholder="🔍 Search menu items...">
             </form>
         </section>
     </header>
 
     <main id="main-section">
+        <!-- Left Column: Menu Items -->
         <section id="menu-box">
             <h2>Our Menu</h2>
             <section id="menu-container">
-                <!-- <div class="menu-display">
-                    <h3>Doro Wot</h3>
-                    <strong>Spicy</strong>
-                    <strong>Main</strong>
-                    <strong>240 ETB</strong>
-                    <button class="add-to-cart-btn"> Add to cart</button>
-                </div> -->
+                <!-- Dynamically generated menu items appear here -->
             </section>
         </section>
 
-        <section id="order-container-box">
-            <!-- <div class="order-container">
-                <h4>Tibs ( * 2)</h4>
-                <h4>450 ETB</h4>
-                <button class="removeBtn">X</button>
-            </div> -->
-        </section>
+        <!-- Right Column: Cart & Checkout -->
+        <div class="sidebar-wrapper">
+            <section id="order-container-box">
+                <h3>Your Order</h3>
+                <div id="cart-items-wrapper">
+                    <!-- Dynamic cart items appear here -->
+                </div>
+                <div id="total-container"></div>
+            </section>
+
+            <section id="checkout-form-container">
+                <h3>Checkout Details</h3>
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input id="name" name="name" placeholder="Abebe Kebede">
+                        <div id="name-error" class="error-container"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNum">Phone Number</label>
+                        <input id="phoneNum" name="telNum" placeholder="+251 912 345 678">
+                        <div id="phone-error" class="error-container"></div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input id="confirm-payment" type="checkbox" name="confirmPayment">
+                        <label for="confirm-payment">Confirm Payment</label>
+                    </div>
+
+                    <div id="total-container-for-checkout-form"></div>
+
+                    <button type="submit" id="checkout-button">Check Out</button>
+                </form>
+            </section>
+        </div>
     </main>
 
-    <footer>
-
-    </footer>
+    <footer></footer>
 </body>
 
 </html>
