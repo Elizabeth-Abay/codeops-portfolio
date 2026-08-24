@@ -160,6 +160,7 @@ let createMenuCards = ({ id, name, category, price, spicy }) => {
     let itemDiv = document.createElement('div');
     itemDiv.classList.add('menu-display');
 
+    
     let spicyHtml = spicy ? `<button class="spicy">Spicy</button>` : '';
 
     itemDiv.innerHTML = `
