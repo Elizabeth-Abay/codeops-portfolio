@@ -1,0 +1,4 @@
+M-2 day - 06
+hoisting and its relation to memory
+Temporal dev zone
+use strict

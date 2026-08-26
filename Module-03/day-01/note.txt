@@ -1,0 +1,29 @@
+Terminal cmd execution
+
+program cmd options
+ur package.json needs to exist in the directory u are running ur cmd from
+
+Vite is a build tool  meaning it will make the server load ??
+
+
+
+What makes react fast
+
+Real DOM vs Virtual DOM -- diffing makes it fast
+Component Reusability
+
+
+Vite has got lower bundle size
+
+and what does linter mean
+
+
+xml - every elt needs to be wrapped by parent, autoclose tag <img /> never <img>  blo neger nada , className not class
+
+
+Vite used for making node understand xml - u can mix them up bc of Vite
+Dynamic theme kefelegsh className = {theme}
+
+Why is it not working when we open it using live server
+
+npm run preview
