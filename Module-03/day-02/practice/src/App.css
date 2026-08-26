@@ -1,0 +1,10 @@
+.mainApp{
+    display: grid;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-row-gap : 10px;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+

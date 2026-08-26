@@ -1,0 +1,1 @@
+React is fast bc it uses re render not re create

@@ -27,3 +27,8 @@ Dynamic theme kefelegsh className = {theme}
 Why is it not working when we open it using live server
 
 npm run preview
+
+
+the cmd to get react components
+
+npm create vite@latest xyz
