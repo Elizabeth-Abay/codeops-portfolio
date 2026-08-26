@@ -8,5 +8,6 @@ function SideBar(){
     )
 }
 
+// sidebar
 
 export default SideBar;

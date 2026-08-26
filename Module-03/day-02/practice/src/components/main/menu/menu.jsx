@@ -29,6 +29,7 @@ function Menu(){
         <section className='menu'>
             {
                 menu.map((dish) => {
+                    // returning dishcard
                     return <DishCard key={dish.id} dish={dish}/>
                     // and react expects keys so that it can track the elements
                     // DishCard will accept an object then props = { key , dish : { name , category , price , spicy}}

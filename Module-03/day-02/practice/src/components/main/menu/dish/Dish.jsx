@@ -14,4 +14,6 @@ function DishCard({ dish}){
     )
 }
 
+// dish
+
 export default DishCard;

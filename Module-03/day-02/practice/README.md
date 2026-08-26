@@ -1,16 +1,26 @@
-# React + Vite
+# Ethiopian Cuisine Menu & Layout Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive web application featuring a sidebar layout and an interactive menu grid displaying traditional Ethiopian dishes, categorized by price, meal type (Main, Breakfast, Side, Vegetarian), and spiciness.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Sidebar Layout:** Dedicated section for application navigation or filters.
+- **Dynamic Menu Cards:** Displays menu items complete with title, price (ETB), category tags, and spice indicators.
+- **Structured Categories:** Organizes items across Breakfast, Main, Side, and Vegetarian options.
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Follow these instructions to get a local copy up and running for development.
 
-## Expanding the Oxlint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Ensure you have Node.js and npm installed on your machine.
+- [Node.js](https://nodejs.org/) (v16.x or higher recommended)
+- [npm](https://www.npmjs.com/)
+
+### Installation & Running
+
+1. **Clone the repository:**
+2. **run npm install:**
+3. **run cd practice:**
+4. **run npm run dev:**
