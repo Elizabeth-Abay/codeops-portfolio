@@ -1,0 +1,14 @@
+.card{
+    display:  flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: yellow;
+    border: solid 1px black;
+    border-radius: 10px;
+    margin: 5px;
+
+}
+
+
+/* dish */

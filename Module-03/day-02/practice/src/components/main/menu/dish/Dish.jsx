@@ -1,29 +1,30 @@
 import './Dish.css';
 import PropTypes from 'prop-types';
+import Card from '../Card/Card';
 
-
-function DishCard({ dish}){
-    // set up default values for spicy
-    let { name , category , price , spicy = false } = dish
+function DishCard({ dish }) {
+    const { name, price, category, spicy = false, currency = 'Etb' } = dish;
 
     return (
-        <section className='dishCard'>
-            <strong>{name}</strong>
-            <strong>{price}</strong>
-            <strong>{category}</strong>
-            {spicy && <strong>Spicy</strong>} 
-            {/* better way of conditional rendering */}
-        </section>
-    )
+    <Card>
+        <h3>{name}</h3>
+        <p>{price} {currency}</p>
+        <span>{category}</span>
+        {/* Explicitly convert to boolean to safely guard non-booleans */}
+        {Boolean(spicy) && <span className="badge">Spicy</span>}
+    </Card>
+    );
 }
 
-// dish
-// setting up props
 DishCard.propTypes = {
-    name : PropTypes.string.isRequired, 
-    category : PropTypes.string.isRequired , 
-    price  : PropTypes.number.isRequired, 
-    spicy : PropTypes.bool
-}
+    dish: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    category: PropTypes.string.isRequired,
+    spicy: PropTypes.bool,
+    currency: PropTypes.string,
+    }).isRequired,
+};
 
 export default DishCard;
