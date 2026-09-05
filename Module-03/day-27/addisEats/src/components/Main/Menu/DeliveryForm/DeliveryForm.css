@@ -1,0 +1,39 @@
+.delivery-form-container {
+  max-width: 440px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #1e293b;
+  border-radius: 16px;
+  border: 1px solid #334155;
+  color: #f8fafc;
+}
+
+.delivery-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.delivery-form-container input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background-color: #0f172a;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.delivery-form-container input:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+.delivery-form-container button[type="submit"] {
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.2s ease;
+}

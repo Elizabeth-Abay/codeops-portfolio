@@ -1,0 +1,22 @@
+passing parameters - props , validate 
+props - passage issue
+props derailing accepting things u wont render to pass it to child - makes it slow
+context - useContext hook 
+Create , Provide , Consume
+
+createContext()
+
+ccreateContext() , Provider-{ 
+    passedObj = { items, addItem}
+    <.Provider value={passedObj }>
+}
+useContext(ye context name)
+
+export the created context and import it on children
+
+The app needs to be wrapped by <Context.provider></Context.provider> elt
+
+the difference between state and context
+
+
+U can set up who shall consume it in the parent
