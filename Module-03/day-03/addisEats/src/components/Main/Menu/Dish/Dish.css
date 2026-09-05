@@ -26,10 +26,7 @@
   color: #38bdf8;
 }
 
-.dishCard strong:nth-child(2)::after {
-  content: ' ETB';
-  font-size: 0.85rem;
-}
+
 
 .dishCard strong:nth-child(3) {
   font-size: 0.8rem;
@@ -80,8 +77,4 @@
   border-radius: 6px;
   font-size: 0.95rem;
   border: 1px solid #334155;
-}
-
-.add-and-its-state strong::after {
-  display: none !important; 
 }

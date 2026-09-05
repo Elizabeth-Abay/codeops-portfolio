@@ -1,0 +1,40 @@
+State and hooks
+
+State - an object's prop changed
+mount - put into DOM
+Hook - component update sidereg change sthg
+
+Variables aren't watched by react
+change sthg then ask to redraw it again
+
+
+Props are  read only and component cldnt update them
+children - holds sthg in between the opening and closing tags
+
+
+useState hook - react listens to it , if sthg is tracked by useState then its change will be listened by react
+
+
+returning a variable vs its updater function
+
+hook - component life cycle lay yale function
+
+setState(newValue)
+
+react hooks - are functions that implement some logic as a response to a change
+
+state - will change something only
+
+
+create sidereg - npm create vite@latest name
+run - npm run dev
+runing process is index.html will run and link it properly to main.jsx
+
+main.jsx will have createRoot( the root elt in the index).render(<Strict>main</Strict>)
+
+
+
+Controlled Input - takes its value from state , reports changes from onChange
+State is the single source of truth - validate... is possible
+state holds the value , input value = {sthg} , typing - onChange Event , onchange handler will update the state of the value
+ensures the state is always capturing the thing that is being written
