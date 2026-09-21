@@ -8,7 +8,9 @@ import Footer from './components/footer/footer.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <section className='main'>
-      <App />
+      <CartProvider>
+        <App />
+      </CartProvider>
     </section>
     
   </StrictMode>,

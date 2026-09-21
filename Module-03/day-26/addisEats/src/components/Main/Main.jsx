@@ -1,5 +1,5 @@
 import SideBar from './sidebar/sideBar';
-import Menu from './Menu/Menu';
+import Menu from './menu/menu';
 import './main.css'
 
 

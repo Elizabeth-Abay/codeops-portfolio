@@ -1,6 +1,6 @@
 import './DishContainer.css';
-import DishCard from '../dish/Dish';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import DishCard from '../Dish/Dish';
 
 function DishContainer({ seenItems , updateTotal }){
     return (

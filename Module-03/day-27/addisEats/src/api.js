@@ -2,6 +2,7 @@ const apiRequester = async () => {
     try{
         let res = await fetch('../public/dishes.json');
 
+        
         if (!res.ok) throw Error('Error happened')
 
         let response = await res.json();

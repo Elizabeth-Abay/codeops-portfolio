@@ -1,0 +1,23 @@
+React - SPA - rendered only in index.html
+url - dom 
+not found page
+useNavigate - forces it to move to somepagr
+
+global state new context provider wrapper
+so changing sthg will not caise everything to rerender rather have it in a stae and react separated
+
+why useMemo ?? - how different from passing pure obj
+
+dont wrap everything in the provider - every change in the state will cause a rerender
+to solve this 
+
+
+install zustand
+
+
+context = every component that will consume this will rerender
+useStore = u will do a call back then {item} and then when u use that value u are linking the value with that component
+ie the component is the listener for that component and then when that changes bcha new rerender miaregew
+
+
+store and auth relationship - sign in and sign out user create and remove mareg - only the child will rerenders
