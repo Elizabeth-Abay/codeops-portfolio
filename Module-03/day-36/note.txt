@@ -1,0 +1,28 @@
+Error handling in react
+
+
+Object isn't a valid react obj - error boundary - fall back
+Error boundary is like giving default value
+
+No official hook
+
+ErrorBoundart 
+
+
+
+Lazy loading import when they are required
+
+const Checkout = lazy(() => import("./checkout/Checkout"));
+const Receipt = lazy(() => import("./orders/Receipt"));
+
+and wrap Router in the app using suspense element fallback = { <Spinner />} - u can wrap Routes or Route component
+
+the difference between wrapping with suspense and having loading state ..
+Suspense - component load eskiareg dres yalew
+loading state - for fetching API componentu rasu load argo noro 
+
+useMemo
+Virtualizer - yemitayewn part bcha new dom lay yemiaskemtew- gn wont that cause more issue than good
+bc continuously clean and append mareg
+
+Portal - 

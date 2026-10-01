@@ -1,0 +1,112 @@
+** server side vs client side rendering react vs next
+** Layout in react vs next
+** the difference between layout and Template
+** Rendering Strategy -  not exclusive  
+** caching in next js
+** in next js can we use Context.... bc it is a server side rendered thing
+
+Layout and Rendering structures
+
+File Based routing - file name matters
+server side rendering - rendered html
+
+Layout and Template
+
+Header , Footer , sidebar - wont unmount
+Only the main part changes
+
+Automatic refreshing - news / weather data
+When do refreshes happen - on every req , automatically by timer or static
+
+
+Layout - wraps everything and when route changes it only updates the main part
+Layout doesn't rerender
+
+Layout - component - actually yemtfelgiwn part make up maregia - but that component will need a children input which by default is the component in page.jsx
+
+normally - layout.jsx , page.jsx , error.jsx , loading.jsx , notFound.jsx ( next has its own but if u want custom) = llpenf
+llpenf - per every component folder and in the base app folder possible
+
+
+Template
+
+
+Rendering Strategy
+
+Next build requires node js environment
+
+SSG - once build we will have to refresh
+ISR - once fetch then re-made - refresh made
+SSR === next js - dashboard , search engine
+CSR - for auth --- react lay yalu things 
+How to make components client -- use Client will make it client component
+Next js have got all server side components
+
+SSG = once at build - sthg that doesn't change frequently
+Dynamic - search param , fetch ...
+
+For filtering we can use as a params - like i cld have done route and then use params 
+
+
+Incremental - refetches at some interval - based on the application requirement
+
+
+Controlling Rendering
+
+Dynamic - caching
+CSR - cookies are important
+
+
+If u watn ISR then have a wrapper and on the page.jsx call the wrapper component
+the wrapper will do the fetch and will have a timer to revalidate itself in some interval
+then it will accept the data and then set it up
+
+
+Suspense - wrap the fetch part it will be like utube
+
+
+
+
+
+CSR - client side rendering
+API requests will send json
+especially useful for dashboard bc once u r authenticated then no need to add the lag for the server building the html
+for authenticated dashboard , setting ..
+empty html will be sent by the server and the browser will load javascript in there
+it is greate for interactive dashboards
+SEO -it is bad bc bots see an empty page and old phones will make it slow
+
+
+// best for seo bc it will give the bots the data quickly 
+SSR - the server will render the page and then it sends the final html 
+greate for finding fresh data and personalized feed... 
+but it adds server latency 
+data - user specific use ssr , and changes on each page refresh why tho
+
+
+Next js - both client and server components
+less interactive parts - use SSR
+
+
+
+// to show changes here u have to redeploy
+SSG - static site generation - how wld it act with a backend or is there none 
+the generation is done at building at the first time and then at every request it will send the built files 
+for every request
+And no processing will be done at the request time'
+no processing on the server side and client side at every request
+if u change anything then re build again
+the backend api will be hit only once at the build time
+
+eg - documentation seeing , non - user specific information
+
+ISR - Incremental static regeneration
+the page is static but check for updates every x time
+everytime u hit refresh be timer then it will rebuild that specific page only
+SSG - fast + SSR - background update
+first build ssg  = then cache and then check their lifetime 
+if their lifetime > request time then next js triggers a background process and refreshes
+
+
+
+
